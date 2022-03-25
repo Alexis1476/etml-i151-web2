@@ -1,0 +1,655 @@
+{
+  "formatVersion": 3,
+  "id": "root",
+  "ideas": {
+    "1": {
+      "title": "P_web2",
+      "id": 1,
+      "attr": {
+        "position": [
+          -104,
+          34,
+          1
+        ]
+      },
+      "ideas": {
+        "1": {
+          "title": "Fonctionnalités",
+          "id": 2,
+          "attr": {
+            "position": [
+              83,
+              -401,
+              7
+            ]
+          },
+          "ideas": {
+            "1": {
+              "title": "Vues",
+              "id": 3,
+              "ideas": {
+                "1": {
+                  "title": "Accueil",
+                  "id": 4,
+                  "attr": {
+                    "position": [
+                      20,
+                      -111,
+                      1
+                    ],
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Explication du site",
+                      "id": 5
+                    },
+                    "2": {
+                      "title": "5 derniers ouvrages",
+                      "id": 6,
+                      "attr": {
+                        "position": [
+                          85,
+                          15,
+                          1
+                        ]
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Liste ouvrages",
+                  "id": 8,
+                  "ideas": {
+                    "1": {
+                      "title": "Trier par catégorie",
+                      "id": 9,
+                      "attr": {
+                        "position": [
+                          147,
+                          -92,
+                          3
+                        ]
+                      }
+                    },
+                    "7": {
+                      "title": "Infos \n",
+                      "id": 25,
+                      "ideas": {
+                        "1": {
+                          "title": "Titre",
+                          "id": 28,
+                          "attr": {},
+                          "ideas": {
+                            "1": {
+                              "title": "Details ouvrage",
+                              "id": 31,
+                              "attr": {
+                                "style": {
+                                  "backgroundColor": "#FF0000",
+                                  "text": {
+                                    "color": "#FFFFFF"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Auteur",
+                          "id": 29
+                        },
+                        "3": {
+                          "title": "Pseudo créateur",
+                          "id": 30,
+                          "ideas": {
+                            "1": {
+                              "title": "Details créateur",
+                              "id": 32,
+                              "attr": {
+                                "style": {
+                                  "backgroundColor": "#FF0000",
+                                  "text": {
+                                    "color": "#FFFFFF"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "attr": {
+                        "position": [
+                          149,
+                          24,
+                          2
+                        ]
+                      }
+                    },
+                    "13": {
+                      "title": "Restrictions sur les liens",
+                      "id": 10,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FF0000",
+                          "text": {
+                            "color": "#FFFFFF"
+                          }
+                        },
+                        "position": [
+                          123,
+                          84,
+                          1
+                        ]
+                      }
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Ajout ouvrage",
+                  "id": 11,
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FF0000",
+                      "text": {
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Page appréciation",
+                  "id": 12,
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FF0000",
+                      "text": {
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Détail ouvrage",
+                  "id": 18,
+                  "attr": {
+                    "position": [
+                      60,
+                      146,
+                      2
+                    ],
+                    "style": {
+                      "backgroundColor": "#FF0000",
+                      "text": {
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Infos ouvrage",
+                      "id": 19,
+                      "ideas": {}
+                    },
+                    "2": {
+                      "title": "Nb d'appréciations ",
+                      "id": 35
+                    },
+                    "3": {
+                      "title": "Moyenne",
+                      "id": 36
+                    }
+                  }
+                },
+                "6": {
+                  "title": "Details créateur",
+                  "id": 33,
+                  "ideas": {
+                    "1": {
+                      "title": "Infos créateur",
+                      "id": 37
+                    },
+                    "2": {
+                      "title": "Nb ouvrages postés",
+                      "id": 38
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FF0000",
+                      "text": {
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "3": {
+          "title": "HEROKU",
+          "id": 82,
+          "attr": {
+            "position": [
+              112,
+              181,
+              11
+            ]
+          }
+        },
+        "8": {
+          "title": "Tests unitaires + CI",
+          "id": 81,
+          "attr": {
+            "position": [
+              24,
+              269,
+              12
+            ]
+          }
+        },
+        "-1": {
+          "title": "Documentation",
+          "id": 14,
+          "ideas": {
+            "1": {
+              "title": "Rapport",
+              "id": 39,
+              "ideas": {
+                "1": {
+                  "title": "Intro",
+                  "id": 40,
+                  "ideas": {
+                    "1": {
+                      "title": "Explication du projet",
+                      "id": 41,
+                      "attr": {
+                        "position": [
+                          92,
+                          1,
+                          1
+                        ],
+                        "style": {
+                          "backgroundColor": "#FFCC00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Analyse",
+                  "id": 42,
+                  "ideas": {
+                    "1": {
+                      "title": "HTML",
+                      "id": 43,
+                      "ideas": {
+                        "1": {
+                          "title": "Mise en page",
+                          "id": 44,
+                          "attr": {}
+                        },
+                        "2": {
+                          "title": "Réalisation",
+                          "id": 45
+                        }
+                      },
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FF99CC"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "MCD, MLD, MPD",
+                      "id": 46,
+                      "attr": {
+                        "position": [
+                          103,
+                          41,
+                          1
+                        ],
+                        "style": {
+                          "backgroundColor": "#FF99CC"
+                        }
+                      },
+                      "ideas": {}
+                    },
+                    "3": {
+                      "title": "Schémas UML",
+                      "id": 48,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FF99CC"
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Découpe du code",
+                      "id": 49,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FF99CC"
+                        }
+                      }
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Réalisation",
+                  "id": 50,
+                  "ideas": {
+                    "3": {
+                      "title": "Explication",
+                      "id": 60,
+                      "ideas": {
+                        "1": {
+                          "title": "Login algorithme",
+                          "id": 61,
+                          "attr": {
+                            "style": {
+                              "backgroundColor": "#FF99CC"
+                            }
+                          }
+                        },
+                        "2": {
+                          "title": "Moyenne appréciations",
+                          "id": 62,
+                          "attr": {
+                            "style": {
+                              "backgroundColor": "#FFCC00"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "4": {
+                      "title": "Manuel utilisation",
+                      "id": 64,
+                      "ideas": {
+                        "1": {
+                          "title": "Admin / user",
+                          "id": 65,
+                          "ideas": {
+                            "1": {
+                              "title": "Ajout ouvrage",
+                              "id": 66,
+                              "attr": {
+                                "style": {
+                                  "backgroundColor": "#FF99CC"
+                                }
+                              }
+                            },
+                            "2": {
+                              "title": "Ajout appréciation",
+                              "id": 67,
+                              "attr": {
+                                "style": {
+                                  "backgroundColor": "#FF99CC"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Test",
+                  "id": 68,
+                  "ideas": {
+                    "1": {
+                      "title": "Explication Unit Test",
+                      "id": 69,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FFCC00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Conclusion",
+                  "id": 70,
+                  "ideas": {
+                    "1": {
+                      "title": "Générale",
+                      "id": 71,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FFCC00"
+                        }
+                      }
+                    },
+                    "2": {
+                      "title": "Personnelle",
+                      "id": 72,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FFCC00"
+                        }
+                      }
+                    },
+                    "3": {
+                      "title": "Critique planification",
+                      "id": 73,
+                      "attr": {
+                        "style": {
+                          "backgroundColor": "#FFCC00"
+                        }
+                      }
+                    }
+                  }
+                },
+                "6": {
+                  "title": "Webographie",
+                  "id": 74
+                }
+              }
+            },
+            "2": {
+              "title": "Mise en page",
+              "id": 52,
+              "ideas": {
+                "1": {
+                  "title": "Century Gothic",
+                  "id": 53,
+                  "ideas": {
+                    "1": {
+                      "title": "Texte : 11",
+                      "id": 55
+                    },
+                    "2": {
+                      "title": "Titres : 14",
+                      "id": 56
+                    },
+                    "3": {
+                      "title": "Sous-titres : 12",
+                      "id": 57
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Sources",
+                  "id": 58
+                }
+              },
+              "attr": {
+                "position": [
+                  115,
+                  306,
+                  1
+                ]
+              }
+            }
+          },
+          "attr": {
+            "position": [
+              70,
+              -278,
+              5
+            ]
+          }
+        },
+        "0.5": {
+          "title": "Template",
+          "id": 13,
+          "attr": {
+            "position": [
+              46,
+              -702.9999847412109,
+              13
+            ]
+          },
+          "ideas": {
+            "1": {
+              "title": "Footer",
+              "id": 15,
+              "ideas": {
+                "1": {
+                  "title": "Page contact",
+                  "id": 16
+                },
+                "2": {
+                  "title": "Copyright",
+                  "id": 17
+                }
+              }
+            },
+            "2": {
+              "title": "Header",
+              "id": 21,
+              "ideas": {
+                "1": {
+                  "title": "Champs de login",
+                  "id": 22,
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#99CC00"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Username",
+                  "id": 23,
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FF0000",
+                      "text": {
+                        "color": "#FFFFFF"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "-11": {
+          "title": "Optionnel",
+          "id": 83,
+          "attr": {
+            "position": [
+              189,
+              247.99998474121094,
+              14
+            ]
+          },
+          "ideas": {
+            "1": {
+              "title": "Ouvrage",
+              "id": 84,
+              "attr": {
+                "position": [
+                  121,
+                  -25,
+                  1
+                ]
+              },
+              "ideas": {
+                "1": {
+                  "title": "Recherche",
+                  "id": 86
+                },
+                "2": {
+                  "title": "Modification",
+                  "id": 87
+                },
+                "3": {
+                  "title": "Suppresion",
+                  "id": 88
+                }
+              }
+            },
+            "2": {
+              "title": "Ajout personne",
+              "id": 89
+            },
+            "3": {
+              "title": "Commentaire appréciation",
+              "id": 90,
+              "attr": {
+                "position": [
+                  167,
+                  121,
+                  2
+                ]
+              }
+            },
+            "4": {
+              "title": "Responsive",
+              "id": 91
+            }
+          }
+        }
+      }
+    },
+    "2": {
+      "title": "1/2 Page",
+      "id": 77,
+      "attr": {
+        "position": [
+          -800,
+          -735,
+          1
+        ],
+        "style": {
+          "backgroundColor": "#FFCC00",
+          "text": {
+            "color": "#000000"
+          }
+        }
+      },
+      "ideas": {}
+    },
+    "3": {
+      "title": "1 Page",
+      "id": 79,
+      "attr": {
+        "position": [
+          -793,
+          -685,
+          1
+        ],
+        "style": {
+          "backgroundColor": "#FF99CC",
+          "text": {
+            "color": "#000000"
+          }
+        }
+      }
+    }
+  },
+  "title": "P_web2",
+  "links": []
+}
