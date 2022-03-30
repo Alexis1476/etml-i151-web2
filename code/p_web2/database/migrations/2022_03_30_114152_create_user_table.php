@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('idUser');
             $table->string('useNickname',60);
             $table->string('usePassword',255);
-            $table->timestamp('useCrateAt');
+            $table->timestamp('useCreateAt');
             $table->integer('useNbBooks');
             $table->integer('useNbAppreciation');
             $table->boolean('useAdmin');
