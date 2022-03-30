@@ -21,14 +21,10 @@ return new class extends Migration {
             $table->date('booPublishingDate');
             $table->double('booNoteAverage');
             $table->string('booCoverName', 50);
-            $table->foreignId('idAuthor');
-            $table->foreignId('idEditor');
-            $table->foreignId('idCategory');
-            $table->foreignId('idUser');
-            $table->foreign('idAuthor')->references('idAuthor')->on('t_author');
-            $table->foreign('idEditor')->references('idEditor')->on('t_editor');
-            $table->foreign('idCategory')->references('idCategory')->on('t_category');
-            $table->foreign('idUser')->references('idUser')->on('t_user');
+            $table->foreignId('idAuthor')->references('idAuthor')->on('t_author');
+            $table->foreignId('idEditor')->references('idEditor')->on('t_editor');
+            $table->foreignId('idCategory')->references('idCategory')->on('t_category');
+            $table->foreignId('idUser')->references('idUser')->on('t_user');
         });
     }
 
