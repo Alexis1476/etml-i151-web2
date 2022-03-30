@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategoryModel extends Model
 {
+    protected $table = 't_category';
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_category
      * Une catégorie possède plusieurs livre
-     * @return 
+     * @return
     */
     public function books(){
         return $this->hasMany(BookModel::class);

@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class AuthorModel extends Model
 {
+    protected $table = 't_author';
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_author
      * Un auteur possède plusieurs livre
-     * @return 
+     * @return
     */
     public function books(){
         return $this->hasMany(BookModel::class);

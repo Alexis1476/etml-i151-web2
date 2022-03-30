@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserModel extends Model
 {
-
+    protected $table = 't_user';
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_user
      * Un utilisateur a plusieurs livre

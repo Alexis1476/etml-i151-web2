@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AppreciateModel extends Model
 {
+    protected $table = 't_appreciate';
     /**
      * Fonction qui créer la relation entre la table t_appreciate et la table t_user
      * Une appréciation appartient à un utilisateur
