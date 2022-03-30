@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('t_author', function (Blueprint $table) {
-            $table->increments('idAuthor');
+            $table->id('idAuthor');
             $table->string('autFirstName',60);
             $table->string('autLastName',60);
         });

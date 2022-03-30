@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('t_editor', function (Blueprint $table) {
-            $table->increments('idEditor');
+            $table->id('idEditor');
             $table->string('ediName', 120);
         });
     }
