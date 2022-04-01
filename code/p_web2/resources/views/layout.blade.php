@@ -49,8 +49,8 @@
           </div>
           </div>
         </nav>
-      @yield('content')
     </div>
   </div>
+  @yield('content')
 </body>
 </html>
