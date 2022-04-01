@@ -13,7 +13,7 @@ class BookModel extends Model
      * @return
      */
     public function user(){
-        return $this->belongsTo(UserModel::class);
+        return $this->belongsTo(UserModel::class, 'idUser');
     }
 
     /**
@@ -22,7 +22,7 @@ class BookModel extends Model
      * @return
      */
     public function category(){
-        return $this->belongsTo(CategoryModel::class);
+        return $this->belongsTo(CategoryModel::class, 'idCategory');
     }
 
     /**
@@ -31,7 +31,7 @@ class BookModel extends Model
      * @return
      */
     public function editor(){
-        return $this->belongsTo(EditorModel::class);
+        return $this->belongsTo(EditorModel::class, 'idEditor');
     }
 
     /**
@@ -40,7 +40,7 @@ class BookModel extends Model
      * @return
      */
     public function author(){
-        return $this->belongsTo(AuthorModel::class);
+        return $this->belongsTo(AuthorModel::class, 'idAuthor');
     }
 
     /**
@@ -49,7 +49,7 @@ class BookModel extends Model
      * @return
      */
     public function appreciations(){
-        return $this->hasMany(AppreciateModel::class);
+        return $this->hasMany(AppreciateModel::class, 'idBook');
     }
 
     // Tableau pour les colonnes de la table qui sont remplissables
