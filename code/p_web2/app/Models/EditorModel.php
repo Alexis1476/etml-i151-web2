@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class EditorModel extends Model
 {
     protected $table = 't_editor';
+    protected $primaryKey = 'idEditor';
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_editor
      * @return

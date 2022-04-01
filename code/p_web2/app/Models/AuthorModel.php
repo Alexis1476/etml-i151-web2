@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AuthorModel extends Model
 {
     protected $table = 't_author';
+    protected $primaryKey = 'idAuthor';
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_author
      * Un auteur possède plusieurs livre

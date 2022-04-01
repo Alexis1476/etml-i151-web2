@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryModel extends Model
 {
     protected $table = 't_category';
+    protected $primaryKey = 'idCategory';
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_category
      * Une catégorie possède plusieurs livre
