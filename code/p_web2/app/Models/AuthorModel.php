@@ -14,7 +14,7 @@ class AuthorModel extends Model
      * @return
     */
     public function books(){
-        return $this->hasMany(BookModel::class);
+        return $this->hasMany(BookModel::class, 'idBook');
     }
 
     // Tableau pour les colonnes de la table qui sont remplissables

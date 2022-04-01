@@ -14,7 +14,7 @@ class AppreciateModel extends Model
      * @return
      */
     public function user(){
-        return $this->belongsTo(UserModel::class);
+        return $this->belongsTo(UserModel::class, 'idUser');
     }
 
     /**
@@ -23,7 +23,7 @@ class AppreciateModel extends Model
      * @return
      */
     public function book(){
-        return $this->belongsTo(UserModel::class);
+        return $this->belongsTo(UserModel::class, 'idBook');
     }
 
     // Tableau pour les colonnes de la table qui sont remplissables
