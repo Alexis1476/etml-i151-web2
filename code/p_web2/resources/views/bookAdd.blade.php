@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+    <h1 class="text-2xl font-bold text-center">Add a book</h1>
     <div class="flex items-center justify-center content-center h-full">
         <form action="/bookAdd" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             {{ csrf_field() }}
