@@ -5,30 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>P_Web2</title>
-    <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <style>
-  .container{
-    margin: auto;
-  }
-  button{
-    margin-left: 0.5rem;
-  }
-  a{
-    font-size: 20px;
-  }
-  .navbar{
-    background-color: #3D8FDB;
-  }
-  </style>
   <div class="navbar">
     <div class="container">
       <nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded">
           <div class="container flex flex-wrap justify-between items-center mx-auto">
           <a href="" class="flex items-center">
-              <img src="../../../documentation/screens/navbar-img.png" class="mr-3 h-6 sm:h-16" alt="Passion lecture" />
+              <img src="img/navbar-img.png" class="mr-3 h-6 sm:h-16" alt="Passion lecture" />
               <span class="self-center text-xl font-semibold whitespace-nowrap">Passion lecture</span>
           </a>
           <div class="flex md:order-2">
@@ -51,6 +37,8 @@
         </nav>
     </div>
   </div>
-  @yield('content')
+  <div class="container">
+    @yield('content')
+  </div>
 </body>
 </html>
