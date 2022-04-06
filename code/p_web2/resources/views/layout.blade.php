@@ -44,7 +44,7 @@
     <div class="container mx-auto px-6">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-around">
-              <div class="">
+              <div>
                 <span class="font-bold text-gray-700 uppercase mb-2">Github</span>
                   <div class="flex justify-start space-x-2">
                     <span class="my-2"><a href="https://github.com/dieperid" class="footer-color text-md md:hover:underline">David</a></span>
@@ -53,8 +53,7 @@
                     <span class="my-2"><a href="https://github.com/Robi2004" class="footer-color text-md md:hover:underline">Robustiano</a></span>
                   </div>
                 </div>
-             
-                <div class="">
+                <div>
                   <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">Contact</span>
                   <div class="flex justify-start">
                     <span class="my-2"><a href="#" class="footer-color  text-md md:hover:underline">link 1</a></span>
