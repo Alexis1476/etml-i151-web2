@@ -37,7 +37,7 @@
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container mt-10">
     @yield('content')
 </div>
 <footer class="footer inset-x-0 bottom-0 bg-white relative pt-1 border-b-2 footer-color">
