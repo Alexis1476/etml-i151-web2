@@ -39,7 +39,6 @@
                         Clear
                     </button>
                 </div>
-            </div>
         </form>
     </div>
 @endsection
