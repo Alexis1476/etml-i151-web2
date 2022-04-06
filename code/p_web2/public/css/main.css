@@ -3,3 +3,15 @@
         max-width: 1920px;
     }
 }
+.container{
+    margin: auto;
+  }
+  button{
+    margin-left: 0.5rem;
+  }
+  a{
+    font-size: 20px;
+  }
+  .navbar{
+    background-color: #3D8FDB;
+  }

@@ -9,6 +9,7 @@ class UserModel extends Model
 {
     protected $table = 't_user';
     protected $primaryKey = 'idUser';
+
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_user
      * Un utilisateur a plusieurs livre
@@ -18,6 +19,11 @@ class UserModel extends Model
         return $this->hasMany(BookModel::class, 'idBook');
     }
 
+    /**
+     * Fonction qui créer la relation entre la table t_appreciate et la table t_user
+     * Un livre a plusieurs appreciations
+     * @return
+     */
     public function appreciations(){
         return $this->hasMany(AppreciateModel::class, 'idUser');
     }
