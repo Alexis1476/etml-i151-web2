@@ -22,7 +22,7 @@
             </button>
         </div>
     </div>
-    <div class="flex justify-center flex-wrap text-blue-500">
+    <div class="flex flex-wrap justify-center">
         {{--ToDo faire une boucle foreach pour ajouter les livres--}}
         @include('partials.book-card',['title'=>'Book 1','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
         @include('partials.book-card',['title'=>'Book 2','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
