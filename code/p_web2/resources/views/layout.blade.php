@@ -15,16 +15,6 @@
             <img src="img/navbar-img.png" class="mr-3 h-6 sm:h-16" alt="Passion lecture"/>
             <span class="self-center text-xl font-semibold whitespace-nowrap">Passion lecture</span>
         </a>
-        <div class="flex md:order-2">
-            <button type="button"
-                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
-                Login
-            </button>
-            <button type="button"
-                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
-                Sign Up
-            </button>
-        </div>
         <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
             <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                 <li>
@@ -34,6 +24,16 @@
                     @include('partials.navbar-item', ['lien' => 'bookList', 'texte' => 'Book List'])
                 </li>
             </ul>
+        </div>
+        <div class="flex md:order-2">
+            <button type="button"
+                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                Login
+            </button>
+            <a href="/userAdd"
+                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                Sign Up
+            </a>
         </div>
     </div>
 </nav>
