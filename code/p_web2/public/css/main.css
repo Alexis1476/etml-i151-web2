@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(240, 240, 240);
+}
+
 @media (min-width: 1920px) {
     .container {
         max-width: 1920px;
@@ -28,4 +32,8 @@ nav {
     font-size: 18px;
     color: #3D8FDB;
     border-color: #3D8FDB;
+}
+
+.text-20{
+    font-size: 1.25rem;
 }
