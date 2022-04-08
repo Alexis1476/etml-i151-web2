@@ -7,6 +7,58 @@
     <title>P_Web2</title>
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Style modal */
+        .modal{
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left:0;
+            top:0;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modalContent{
+            background-color: #00000093;
+            margin: 8% auto;
+            width: 70%;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+            animation-name: modalopen;
+            animation-duration:2s;
+        }
+        /*Animation*/
+        @keyframes modalopen{
+            from{opacity: 0}
+            to{opacity: 1;}
+        }
+        /*Style elements du modal*/
+        .modalHeader{
+            background-color: #fda90f;
+            padding: 15px;
+        }
+        .modalHeader h2, .modalFooter h3{
+            margin: 0;
+            color: #000000;
+        }
+        .modalBody{
+            padding: 10px 20px;
+        }
+        .modalFooter{
+            background-color: #fda90f;
+            height: 15px;
+        }
+        .closeBtn{
+            color: #000000;
+            float: right;
+            font-size: 30px;
+        }
+        .closeBtn:hover, .closeBtn:focus{
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded">
@@ -26,12 +78,14 @@
             </ul>
         </div>
         <div class="flex md:order-2">
-            <button type="button"
+            <button onclick="openModal()"
+                    id="modalBouton"
+                    type="button"
                     class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
                 Login
             </button>
             <a href="/userAdd"
-                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+               class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
                 Sign Up
             </a>
         </div>
@@ -39,25 +93,41 @@
 </nav>
 <div class="container mt-10">
     @yield('content')
+    <div id="simpleModal" class="modal">
+        <div class="modalContent">
+            <div class="modalHeader">
+                <span class="closeBtn">&times;</span>
+                <h2>Avatars</h2>
+            </div>
+            <div class="modalBody">
+                @include('partials.form-login')
+            </div>
+        </div>
+    </div>
 </div>
 <footer class="footer inset-x-0 bottom-0 relative pt-1 border-b-2 footer-color">
     <div class="container mx-auto px-6">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-around">
-              <div>
-                <span class="font-bold text-gray-700 uppercase mb-2">Github</span>
-                  <div class="flex justify-start space-x-2">
-                    <span class="my-2"><a href="https://github.com/dieperid" class="footer-color text-md md:hover:underline">David</a></span>
-                    <span class="my-2"><a href="https://github.com/xijune" class="footer-color text-md md:hover:underline">Stefan</a></span>
-                    <span class="my-2"><a href="https://github.com/Alexis1476" class="footer-color text-md md:hover:underline">Alexis</a></span>
-                    <span class="my-2"><a href="https://github.com/Robi2004" class="footer-color text-md md:hover:underline">Robustiano</a></span>
-                  </div>
+                <div>
+                    <span class="font-bold text-gray-700 uppercase mb-2">Github</span>
+                    <div class="flex justify-start space-x-2">
+                        <span class="my-2"><a href="https://github.com/dieperid"
+                                              class="footer-color text-md md:hover:underline">David</a></span>
+                        <span class="my-2"><a href="https://github.com/xijune"
+                                              class="footer-color text-md md:hover:underline">Stefan</a></span>
+                        <span class="my-2"><a href="https://github.com/Alexis1476"
+                                              class="footer-color text-md md:hover:underline">Alexis</a></span>
+                        <span class="my-2"><a href="https://github.com/Robi2004"
+                                              class="footer-color text-md md:hover:underline">Robustiano</a></span>
+                    </div>
                 </div>
                 <div>
-                  <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">Contact</span>
-                  <div class="flex justify-start">
-                    <span class="my-2"><a href="#" class="footer-color  text-md md:hover:underline">link 1</a></span>
-                  </div>
+                    <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">Contact</span>
+                    <div class="flex justify-start">
+                        <span class="my-2"><a href="#"
+                                              class="footer-color  text-md md:hover:underline">link 1</a></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,4 +143,50 @@
     </div>
 </footer>
 </body>
+<script>
+    //Script modal Avatars
+    //Declaration des variables
+    let modal = document.getElementById("simpleModal");
+    let modalButton = document.getElementById("modalBouton");
+    let closeBtn = document.getElementsByClassName("closeBtn")[0];
+    var varCasePerso = document.getElementsByClassName('avatars');          // Toutes les images qui ont le même nom de class
+    var srcImg = '';                                                          // Chemin de l'image
+    var inputLienAvatar = document.getElementById('avatarImg');
+
+    // Event pour afficher le modal
+    modalButton.addEventListener("click", openModal);
+    // Event si on veut fermer le modal
+    closeBtn.addEventListener("click", closeModal);
+    // Event si on click dehors du modal
+    window.addEventListener("click", outsideClick);
+
+    // Function pour afficher le modal
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    // Funcion pour cacher le modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Function pour fermer le modal si on click dehors
+    function outsideClick(e) {
+        if (e.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // On récupère le chemin de l'image et on le met dans une variable
+    function RecupererUrlImg(imgClique) {
+        srcImg = imgClique.getAttribute('src');
+        // On met le lien de l'image dans l'input avatarImg du formulaire
+        inputLienAvatar.setAttribute('value', srcImg);
+        closeModal();
+    }
+</script>
 </html>
+
+
+
+
