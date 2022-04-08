@@ -40,7 +40,7 @@
 <div class="container mt-10">
     @yield('content')
 </div>
-<footer class="footer inset-x-0 bottom-0 bg-white relative pt-1 border-b-2 footer-color">
+<footer class="footer inset-x-0 bottom-0 relative pt-1 border-b-2 footer-color">
     <div class="container mx-auto px-6">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-around">
