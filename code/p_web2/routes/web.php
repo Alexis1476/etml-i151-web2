@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +27,7 @@ Route::get('/creatorDetails', function () {
     return view('creatorDetails');
 });
 
-Route::get('/bookList', function () {
-    return view('bookList');
-});
+Route::get('/bookList', [BookController::class, 'list']);
 
 Route::get('/bookDetails', function () {
     return view('bookDetails');
