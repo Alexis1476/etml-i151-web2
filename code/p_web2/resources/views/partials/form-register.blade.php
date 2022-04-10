@@ -1,7 +1,7 @@
-<h1 class="text-2xl font-bold text-center">Sign up</h1>
 <div class="flex items-center justify-center content-center h-full">
     <form action="/userAdd" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        {{ csrf_field() }}
+        <h1 class="text-2xl font-bold text-center mb-5">Sign up</h1>
+        @csrf
         @include('partials.form-input', ['nameItem'=>'user', 'text'=>'Username', 'type'=>'text'])
         @include('partials.form-input', ['nameItem'=>'password', 'text'=>'Password', 'type'=>'password'])
         @include('partials.form-input', ['nameItem'=>'password_confirm', 'text'=>'Confirm password', 'type'=>'password'])
@@ -16,3 +16,4 @@
         </div>
     </form>
 </div>
+
