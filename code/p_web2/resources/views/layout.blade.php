@@ -7,58 +7,6 @@
     <title>P_Web2</title>
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Style modal */
-        .modal{
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left:0;
-            top:0;
-            height: 100%;
-            width: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .modalContent{
-            background-color: #00000093;
-            margin: 8% auto;
-            width: 70%;
-            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
-            animation-name: modalopen;
-            animation-duration:2s;
-        }
-        /*Animation*/
-        @keyframes modalopen{
-            from{opacity: 0}
-            to{opacity: 1;}
-        }
-        /*Style elements du modal*/
-        .modalHeader{
-            background-color: #fda90f;
-            padding: 15px;
-        }
-        .modalHeader h2, .modalFooter h3{
-            margin: 0;
-            color: #000000;
-        }
-        .modalBody{
-            padding: 10px 20px;
-        }
-        .modalFooter{
-            background-color: #fda90f;
-            height: 15px;
-        }
-        .closeBtn{
-            color: #000000;
-            float: right;
-            font-size: 30px;
-        }
-        .closeBtn:hover, .closeBtn:focus{
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
 <nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded">
@@ -78,30 +26,35 @@
             </ul>
         </div>
         <div class="flex md:order-2">
-            <button onclick="openModal()"
-                    id="modalBouton"
-                    type="button"
+            {{--TODO: Condition si user connecté--}}
+            <button onclick="openModal('modal-login')"
+                    id="login-btn"
                     class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
                 Login
             </button>
-            <a href="/userAdd"
-               class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+            <button onclick="openModal('modal-register')"
+                    id="register-btn"
+                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
                 Sign Up
-            </a>
+            </button>
         </div>
     </div>
 </nav>
-<div class="container mt-10">
+<div class="container mt-10 m-auto">
     @yield('content')
-    <div id="simpleModal" class="modal">
-        <div class="modalContent">
-            <div class="modalHeader">
-                <span class="closeBtn">&times;</span>
-                <h2>Avatars</h2>
-            </div>
-            <div class="modalBody">
-                @include('partials.form-login')
-            </div>
+    {{--TODO: Condition si user connecté--}}
+    <div id="modal-login" class="hidden bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center">
+        <div class="relative max-w-sm py-2 px-3 rounded shadow-xl">
+            <span
+                class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
+            @include('partials.form-login')
+        </div>
+    </div>
+    <div id="modal-register" class="hidden bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center">
+        <div class="relative max-w-sm py-2 px-3 rounded shadow-xl">
+            <span
+                class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
+            @include('partials.form-register')
         </div>
     </div>
 </div>
@@ -144,45 +97,27 @@
 </footer>
 </body>
 <script>
-    //Script modal Avatars
-    //Declaration des variables
-    let modal = document.getElementById("simpleModal");
-    let modalButton = document.getElementById("modalBouton");
-    let closeBtn = document.getElementsByClassName("closeBtn")[0];
-    var varCasePerso = document.getElementsByClassName('avatars');          // Toutes les images qui ont le même nom de class
-    var srcImg = '';                                                          // Chemin de l'image
-    var inputLienAvatar = document.getElementById('avatarImg');
+    function openModal(modalId) {
+        let modal = document.getElementById(modalId);
+        let buttonsClose = document.getElementsByClassName("closeBtn");
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
 
-    // Event pour afficher le modal
-    modalButton.addEventListener("click", openModal);
-    // Event si on veut fermer le modal
-    closeBtn.addEventListener("click", closeModal);
-    // Event si on click dehors du modal
-    window.addEventListener("click", outsideClick);
-
-    // Function pour afficher le modal
-    function openModal() {
-        modal.style.display = "block";
-    }
-
-    // Funcion pour cacher le modal
-    function closeModal() {
-        modal.style.display = "none";
-    }
-
-    // Function pour fermer le modal si on click dehors
-    function outsideClick(e) {
-        if (e.target == modal) {
-            modal.style.display = "none";
+        // Ajout l'évènement pour tous les boutons en ayant la classe closeBtn
+        for (let btnClose of buttonsClose) {
+            btnClose.addEventListener("click", () => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            })
         }
-    }
 
-    // On récupère le chemin de l'image et on le met dans une variable
-    function RecupererUrlImg(imgClique) {
-        srcImg = imgClique.getAttribute('src');
-        // On met le lien de l'image dans l'input avatarImg du formulaire
-        inputLienAvatar.setAttribute('value', srcImg);
-        closeModal();
+        // Si on click dehors du modal
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }
+        });
     }
 </script>
 </html>
