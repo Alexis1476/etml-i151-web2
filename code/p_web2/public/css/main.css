@@ -12,10 +12,6 @@ html, body {
     height: 100%;
 }
 
-.container {
-    margin: auto;
-}
-
 button {
     margin-left: 0.5rem;
 }
@@ -34,6 +30,21 @@ nav {
     border-color: #3D8FDB;
 }
 
+#modal-login, #modal-register {
+    animation-name: openModal;
+    animation-duration: 1s;
+}
+
+@keyframes openModal {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .text-20{
     font-size: 1.25rem;
 }
+
