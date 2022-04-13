@@ -12,4 +12,12 @@ class BookController extends Controller
         $books = BookModel::all();
         return view('bookList', ['books'=>$books]);
     }
+
+    public function searchBooks(Request $request){
+        $param = $request->input('booName');
+
+        $books = BookModel::where('booTitle', 'like', "$param%")->get();
+
+        return view('bookList', ['books'=>$books]);
+    }
 }

@@ -27,6 +27,8 @@ Route::get('/creatorDetails', function () {
 
 Route::get('/bookList', [BookController::class, 'list']);
 
+Route::post('/bookList', [BookController::class, 'searchBooks']);
+
 Route::get('/bookDetails', function () {
     return view('bookDetails');
 });
@@ -38,3 +40,4 @@ Route::get('/bookAdd', function () {
 Route::get('/appreciationAdd', function () {
     return view('appreciationAdd');
 });
+

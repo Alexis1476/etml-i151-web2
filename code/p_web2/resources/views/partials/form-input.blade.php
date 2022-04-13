@@ -4,5 +4,5 @@
     </label>
     <input
         class="input"
-        id="{{$nameItem}}" type="{{$type}}" placeholder="{{$text}}">
+        id="{{$nameItem}}" type="{{$type}}" placeholder="{{$text}}" name="{{$nameItem}}">
 </div>

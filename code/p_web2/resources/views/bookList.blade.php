@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
-    <form class="grid grid-cols-4 mt-10 mx-auto space-x-8 h-48">
+    <form class="grid grid-cols-4 mt-10 mx-auto space-x-8 h-48" method="post" action="/bookList">
+        @csrf
         <div class="row-start-2">
             @include('partials.form-input', ['nameItem'=>'booName', 'text'=>'Search book', 'type'=>'text'])
         </div>
