@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<nav class="border-gray-200 px-2 sm:px-4 py-2.5 rounded">
+<nav class="border-gray-200 px-2 sm:px-4 py-2.5">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="" class="flex items-center">
             <img src="img/navbar-img.png" class="mr-3 h-6 sm:h-16" alt="Passion lecture"/>
@@ -30,12 +30,12 @@
             {{--TODO: Condition si user connecté--}}
             <button onclick="openModal('modal-login')"
                     id="login-btn"
-                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                    class="btnConnection">
                 Login
             </button>
             <button onclick="openModal('modal-register')"
                     id="register-btn"
-                    class="text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0">
+                    class="btnConnection">
                 Sign Up
             </button>
         </div>

@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <div class="block w-4/5 mt-5 mx-auto border-4 border-blue-500 rounded-3xl p-10">
         <div class="flex flex-row justify-between w-full h-full">
             <section class="text-blue-500">
