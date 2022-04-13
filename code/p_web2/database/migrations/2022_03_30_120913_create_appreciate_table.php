@@ -14,6 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('t_appreciate', function (Blueprint $table) {
+            $table->unsignedInteger('idBook');
+            $table->unsignedInteger('idUser');
             $table->primary(['idBook','idUser']);
             $table->double('appNote');
         });
