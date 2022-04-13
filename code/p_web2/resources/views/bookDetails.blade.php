@@ -6,7 +6,7 @@
             <section class="text-blue-500">
                 {{--TODO : Remplacer par des variables--}}
                 <h1 class="text-2xl font-bold">Title :</h1>
-                <h2 class="text-xl my-4">Category : {{$book->category->catName}}</h2>
+                <h2 class="text-xl my-4">Category :</h2>
                 <h2 class="text-xl my-4">Number of pages :</h2>
                 <h2 class="text-xl my-4">Author :</h2>
                 <h2 class="text-xl my-4">Editor :</h2>
