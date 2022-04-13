@@ -16,7 +16,8 @@
         non nibh vehicula molestie. Fusce vehicula dignissim libero. Nunc a lorem enim. Maecenas sit amet
         leo faucibus, tincidunt magna non, vestibulum diam. Integer porttitor et lacus at ultricies.</p>
 
-    <div class="flex flex-wrap justify-center pt-10">
+    <div class="flexCardDiv pt-10">
+        {{--ToDo faire une boucle foreach pour ajouter les livres--}}
         @forelse($books as $book)
             @include('partials.book-card',[
                 'title'=>$book->booTitle,
