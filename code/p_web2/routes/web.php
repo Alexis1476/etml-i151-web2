@@ -38,3 +38,5 @@ Route::get('/bookAdd', function () {
 Route::get('/appreciationAdd', function () {
     return view('appreciationAdd');
 });
+
+Route::get('/bookDetails/{idBook}',[BookController::class, 'bookDetail']);
