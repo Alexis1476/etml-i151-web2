@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <form class="grid grid-cols-4 mt-10 mx-auto space-x-8 h-48" method="post" action="/bookList">
         @csrf
         <div class="row-start-2">
@@ -8,20 +9,20 @@
         <div class="row-start-2">
             @include('partials.form-select', ['nameItem'=>'catName', 'text'=>'Filter by'])
         </div>
-        <div class="row-start-2 items-center mt-5">
+        <div class="row-start-2 items-center mt-7">
             <button
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded focus:outline-none focus:shadow-outline h-8 mt-3"
+                class="btnDefault"
                 type="submit">
                 Search
             </button>
         </div>
         <div class="row-start-1 row-end-3 justify-self-end">
             <a href="/bookAdd"
-               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+               class="btnDefault">
                 Add book </a>
         </div>
     </form>
-    <div class="flex flex-wrap justify-center">
+    <div class="flexCardDiv">
         @foreach($books as $book)
             @include('partials.book-card',[
             'title'=>$book->booTitle,
