@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <div class="grid grid-cols-4 mt-10 mx-auto space-x-8 h-48">
+    <form class="grid grid-cols-4 mt-10 mx-auto space-x-8 h-48">
         <div class="row-start-2">
             @include('partials.form-input', ['nameItem'=>'booName', 'text'=>'Search book', 'type'=>'text'])
         </div>
@@ -19,17 +19,14 @@
                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Add book </a>
         </div>
-    </div>
+    </form>
     <div class="flex flex-wrap justify-center">
-        {{--ToDo faire une boucle foreach pour ajouter les livres--}}
-        @include('partials.book-card',['title'=>'Book 1','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 2','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 3','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 4','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 5','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 6','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 7','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 8','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 9','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
+        @foreach($books as $book)
+            @include('partials.book-card',[
+            'title'=>$book->booTitle,
+            'author'=>$book->author->autFirstName,
+            'user'=>$book->user->useNickname,
+            'img'=>$book->booCoverName])
+        @endforeach
     </div>
 @endsection
