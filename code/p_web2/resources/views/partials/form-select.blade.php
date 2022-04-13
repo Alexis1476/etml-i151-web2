@@ -1,10 +1,10 @@
 <div class="mb-4">
-    <label class="block text-blue-500 text-sm font-bold mb-2" for="{{$nameItem}}">
+    <label class="label" for="{{$nameItem}}">
         {{$text}}
     </label>
     <div class="relative">
         <select
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            class="select"
             id="{{$nameItem}}">
             {{--TODO: Recevoir array de données et faire foreach pour affichage des options --}}
             <option>Alexis</option>
