@@ -19,11 +19,14 @@
 
     <div class="flex flex-wrap justify-center pt-10">
         {{--ToDo faire une boucle foreach pour ajouter les livres--}}
-        @include('partials.book-card',['title'=>'Book 1','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 1','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 1','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 1','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
-        @include('partials.book-card',['title'=>'Book 1','author'=>'Stefan','user'=>'Robi','img'=>'Couverture.png'])
+        @foreach($books as $book)
+            @include('partials.book-card',[
+                'title'=>$book->booTitle,
+                'author'=>$book->author->autFirstName,
+                'user'=>$book->user->useNickname,
+                'img'=>$book->booCoverName
+            ])
+        @endforeach
     </div>
 
 @endsection
