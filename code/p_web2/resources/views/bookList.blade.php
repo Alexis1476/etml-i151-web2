@@ -9,17 +9,15 @@
         </div>
         <div class="row-start-2 items-center mt-5">
             <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded focus:outline-none focus:shadow-outline h-8 mt-3"
-            type="submit">
-            Search
-        </button>
-        </div>
-        <div class="row-start-1 row-end-3 justify-self-end">
-            <button
                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded focus:outline-none focus:shadow-outline h-8 mt-3"
                 type="submit">
-                Add book
+                Search
             </button>
+        </div>
+        <div class="row-start-1 row-end-3 justify-self-end">
+            <a href="/bookAdd"
+               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Add book </a>
         </div>
     </div>
     <div class="flex flex-wrap justify-center">
