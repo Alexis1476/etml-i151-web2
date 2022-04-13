@@ -18,41 +18,29 @@
         </a>
         <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
             <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                <li>
-                    @include('partials.navbar-item', ['lien' => '/', 'texte' => 'Home'])
-                </li>
-                <li>
-                    @include('partials.navbar-item', ['lien' => 'bookList', 'texte' => 'Book List'])
-                </li>
+                <li>@include('partials.navbar-item', ['lien' => '/', 'texte' => 'Home'])</li>
+                <li>@include('partials.navbar-item', ['lien' => 'bookList', 'texte' => 'Book List'])</li>
             </ul>
         </div>
         <div class="flex md:order-2">
             {{--TODO: Condition si user connecté--}}
-            <button onclick="openModal('modal-login')"
-                    id="login-btn"
-                    class="btnConnection">
-                Login
-            </button>
-            <button onclick="openModal('modal-register')"
-                    id="register-btn"
-                    class="btnConnection">
-                Sign Up
-            </button>
+            <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
+            <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection">Sign Up</button>
         </div>
     </div>
 </nav>
 <div class="container mt-10 m-auto">
     @yield('content')
     {{--TODO: Condition si user connecté--}}
-    <div id="modal-login" class="hidden bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center">
-        <div class="relative max-w-sm py-2 px-3 rounded shadow-xl">
+    <div id="modal-login" class="hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
+        <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
             @include('partials.form-login')
         </div>
     </div>
-    <div id="modal-register" class="hidden bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center">
-        <div class="relative max-w-sm py-2 px-3 rounded shadow-xl">
+    <div id="modal-register" class="hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
+        <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
             @include('partials.form-register')
