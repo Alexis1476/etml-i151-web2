@@ -20,4 +20,10 @@ class BookController extends Controller
 
         return view('bookList', ['books'=>$books]);
     }
+
+    public function bookDetails(){
+        $book = BookModel::where('idBook', request('idBook'))->first();
+
+        return view('bookDetails', ['book'=>$book]);
+    }
 }
