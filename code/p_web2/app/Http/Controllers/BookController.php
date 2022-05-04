@@ -16,7 +16,7 @@ class BookController extends Controller
     public function searchBooks(Request $request){
         $param = $request->input('booName');
 
-        $books = BookModel::where('booTitle', 'like', "$param%")->get();
+        $books = BookModel::where('booTitle', 'like', "%$param%")->get();
 
         return view('bookList', ['books'=>$books]);
     }
