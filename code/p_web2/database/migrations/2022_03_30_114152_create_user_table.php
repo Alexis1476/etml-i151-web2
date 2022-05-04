@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id('idUser');
             $table->string('useNickname',60);
             $table->string('usePassword',255);
-            $table->timestamp('useCreateAt');
-            $table->integer('useNbBooks');
-            $table->integer('useNbAppreciation');
-            $table->boolean('useAdmin');
+            $table->timestamp('useCreateAt')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->integer('useNbBooks')->default(0);
+            $table->integer('useNbAppreciation')->default(0);
+            $table->boolean('useAdmin')->default(0);
         });
     }
 
