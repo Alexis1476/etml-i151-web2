@@ -13,6 +13,8 @@ class UserController extends Controller
             'user' => ['required'],
             'password' => ['required', 'confirmed', 'min:8'],
             'password_confirmation' => ['required']
+        ],[
+            'user.required' => 'Username is required'
         ]);
 
         UserModel::create([
