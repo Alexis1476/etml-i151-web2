@@ -5,7 +5,7 @@
         @csrf
         @include('partials.form-input', ['nameItem'=>'user', 'text'=>'Username', 'type'=>'text'])
         @include('partials.form-input', ['nameItem'=>'password', 'text'=>'Password', 'type'=>'password'])
-        @include('partials.form-input', ['nameItem'=>'password_confirm', 'text'=>'Confirm password', 'type'=>'password'])
+        @include('partials.form-input', ['nameItem'=>'password_confirmation', 'text'=>'Confirm password', 'type'=>'password'])
         <div class="mt-1 text-sm text-gray-500 dark:text-gray-300">
             <div class="flex items-center justify-between">
                 <button

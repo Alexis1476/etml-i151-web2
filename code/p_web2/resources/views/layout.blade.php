@@ -32,14 +32,14 @@
 <div class="container mt-10 m-auto">
     @yield('content')
     {{--TODO: Condition si user connecté--}}
-    <div id="modal-login" class="hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
+    <div id="modal-login" class="z-10 hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
         <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
             @include('partials.form-login')
         </div>
     </div>
-    <div id="modal-register" class="hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
+    <div id="modal-register" class="z-10 hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
         <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
