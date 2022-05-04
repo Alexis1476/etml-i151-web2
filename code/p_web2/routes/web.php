@@ -21,15 +21,15 @@ Route::get('/userAdd', function () {
     return view('userAdd');
 });
 
-Route::get('/creatorDetails', function () {
-    return view('creatorDetails');
-});
+Route::get('/creatorDetails{idUser}', [UserController::class, 'userDetails']);
 
 Route::get('/bookList', [BookController::class, 'list']);
 
 Route::post('/bookList', [BookController::class, 'searchBooks']);
 
 Route::get('/bookDetails{idBook}', [BookController::class, 'bookDetails']);
+
+Route::get('/test{idBook}', [BookController::class, 'calculAverage']);
 
 Route::get('/bookAdd', function () {
     return view('bookAdd');

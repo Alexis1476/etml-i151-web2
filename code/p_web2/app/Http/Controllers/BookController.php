@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppreciateModel;
 use Illuminate\Http\Request;
 use App\Models\BookModel;
+use PHPUnit\Framework\Constraint\Count;
 
 class BookController extends Controller
 {
@@ -25,5 +27,11 @@ class BookController extends Controller
         $book = BookModel::where('idBook', request('idBook'))->first();
 
         return view('bookDetails', ['book'=>$book]);
+    }
+
+    public function calculAverage(){
+        $average = AppreciateModel::where('idBook', request('idBook'))->avg('appNote');
+
+        BookModel::where('idBook', request('idBook'))->update(['booNoteAverage' => round($average, 1)]);
     }
 }

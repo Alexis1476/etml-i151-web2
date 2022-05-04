@@ -55,6 +55,7 @@ class BookModel extends Model
     }
 
     // Tableau pour les colonnes de la table qui sont remplissables
+    public $timestamps = false;
     protected $fillable = [
         'idBook',
         'booTitle',

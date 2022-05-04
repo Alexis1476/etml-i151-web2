@@ -24,6 +24,8 @@
                 'author'=>$book->author->autFirstName,
                 'user'=>$book->user->useNickname,
                 'img'=>$book->booCoverName,
+                'note'=>$book->booNoteAverage,
+                'idUser'=>$book->idUser,
                 'idBook'=>$book->idBook
             ])
         @empty
