@@ -2,11 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserModel extends Model
+class UserModel extends Model implements Authenticatable
 {
+    // Implementer les méthodes de l'interface par défaut
+    use \Illuminate\Auth\Authenticatable;
+
     protected $table = 't_user';
     protected $primaryKey = 'idUser';
 
@@ -29,6 +33,7 @@ class UserModel extends Model
     }
 
     // Tableau pour les colonnes de la table qui sont remplissables
+    public $timestamps = false;
     protected $fillable = [
         'idUser',
         'useNickname',
