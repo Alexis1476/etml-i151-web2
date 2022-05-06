@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,13 +61,15 @@ class UserController extends Controller
     public function userDetails()
     {
         $user = UserModel::where('idUser', request('idUser'))->first();
+        $books = BookModel::where('idUser', request('idUser'))->get();
 
-        if ($user->useAdmin == 1) {
-            $user->useAdmin = 'Yes';
-        } else {
-            $user->useAdmin = 'No';
+        if($user->useAdmin == 1){
+            $user->useAdmin = 'Admin';
+        }
+        else{
+            $user->useAdmin = 'Member';
         }
 
-        return view('creatorDetails', ['user' => $user]);
+        return view('creatorDetails', ['user'=>$user, 'books'=>$books]);
     }
 }
