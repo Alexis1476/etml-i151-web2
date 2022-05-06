@@ -23,7 +23,10 @@
                 'title'=>$book->booTitle,
                 'author'=>$book->author->autFirstName,
                 'user'=>$book->user->useNickname,
-                'img'=>$book->booCoverName
+                'img'=>$book->booCoverName,
+                'note'=>$book->booNoteAverage,
+                'idUser'=>$book->idUser,
+                'idBook'=>$book->idBook
             ])
         @empty
             {{--TODO: Info pas de valeurs--}}

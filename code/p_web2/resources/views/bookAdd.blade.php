@@ -6,10 +6,10 @@
         <form action="/bookAdd" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             {{ csrf_field() }}
             @include('partials.form-input', ['nameItem'=>'title', 'text'=>'Title', 'type'=>'text'])
-            @include('partials.form-input', ['nameItem'=>'numberPages', 'text'=>'Number of pages', 'type'=>'text'])
-            @include('partials.form-select', ['nameItem'=>'category', 'text'=>'Category'])
-            @include('partials.form-select', ['nameItem'=>'author', 'text'=>'Author'])
-            @include('partials.form-select', ['nameItem'=>'editor', 'text'=>'Editor'])
+            @include('partials.form-input', ['nameItem'=>'numberPages', 'text'=>'Number of pages', 'type'=>'number'])
+            @include('partials.form-select', ['nameItem'=> 'categories', 'text'=>'Category', 'options'=>$categories])
+            @include('partials.form-select', ['nameItem'=>'authors', 'text'=>'Author','options'=>$authors])
+            @include('partials.form-select', ['nameItem'=>'editors', 'text'=>'Editor','options'=>$editors])
             @include('partials.form-input', ['nameItem'=>'publishingDate', 'text'=>'Publishing date', 'type'=>'date'])
             <div class="mb-4">
                 <label class="label" for="resume">
