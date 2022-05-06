@@ -36,3 +36,5 @@ Route::get('/bookAdd', [BookController::class,'bookAdd']);
 Route::get('/appreciationAdd', function () {
     return view('appreciationAdd');
 });
+
+Route::post('/bookCheckAdd', [BookController::class,'bookCheckAdd']);

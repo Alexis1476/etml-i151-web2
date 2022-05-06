@@ -8,6 +8,7 @@ use App\Models\CategoryModel;
 use App\Models\EditorModel;
 use Illuminate\Http\Request;
 use App\Models\BookModel;
+use Illuminate\Validation\Rule;
 use PHPUnit\Framework\Constraint\Count;
 
 class BookController extends Controller
@@ -46,5 +47,27 @@ class BookController extends Controller
         $editors = EditorModel::select('idEditor as id', 'ediName as name')->get();
 
         return view('bookAdd', ['categories'=>$categories,'authors'=>$authors,'editors'=>$editors]);
+    }
+
+    public function bookCheckAdd()
+    {
+        //dd(request());
+        request()->validate([
+            'title' => ['required','max:255'],
+            'numberPages' => ['required','max:255'],
+            'categories' => ['required'],
+            'authors' => ['required'],
+            'editors' => ['required'],
+            'publishingDate' => ['required'],
+            'bookPreview' => ['required'],
+            'resume' => ['required'],
+            'book cover' => ['required']
+
+        ], [
+            'authors.nullable' => 'No OK',
+            'title.max:255' => 'Title is to big'
+
+        ]);
+
     }
 }
