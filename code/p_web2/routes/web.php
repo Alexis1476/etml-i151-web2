@@ -40,3 +40,6 @@ Route::get('/appreciationAdd', function () {
 Route::post('/userAdd', [UserController::class,'userAdd']);
 
 Route::post('/userConnect', [UserController::class,'userConnect']);
+
+Route::get('/logout', [UserController::class,'userLogout']);
+
