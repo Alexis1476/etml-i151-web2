@@ -7,7 +7,7 @@
             @include('partials.form-input', ['nameItem'=>'booName', 'text'=>'Search book', 'type'=>'text'])
         </div>
         <div class="row-start-2">
-            @include('partials.form-select', ['nameItem'=>'catName', 'text'=>'Filter by'])
+            @include('partials.form-select', ['nameItem'=>'categories', 'options'=>$categories, 'text'=>'Filter by'])
         </div>
         <div class="row-start-2 items-center mt-7">
             <button
@@ -29,6 +29,8 @@
             'author'=>$book->author->autFirstName,
             'user'=>$book->user->useNickname,
             'img'=>$book->booCoverName,
+            'note'=>$book->booNoteAverage,
+            'idUser'=>$book->idUser,
             'idBook'=>$book->idBook])
         @endforeach
     </div>
