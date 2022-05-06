@@ -15,7 +15,8 @@ class BookController extends Controller
     //
     public function list(){
         $books = BookModel::all();
-        return view('bookList', ['books'=>$books]);
+        $categories = CategoryModel::select('idCategory as id', 'catName as name')->get();
+        return view('bookList', ['books'=>$books, 'categories'=>$categories]);
     }
 
     public function searchBooks(Request $request){
@@ -32,10 +33,13 @@ class BookController extends Controller
         return view('bookDetails', ['book'=>$book]);
     }
 
-    public function calculAverage(){
+    public function calculAverage()
+    {
         $average = AppreciateModel::where('idBook', request('idBook'))->avg('appNote');
 
         BookModel::where('idBook', request('idBook'))->update(['booNoteAverage' => round($average, 1)]);
+    }
+
     public function bookadd(){
         $categories = CategoryModel::select('idCategory as id', 'catName as name')->get();
         $authors = AuthorModel::select('idAuthor as id', AuthorModel::raw('CONCAT(autFirstName," ",autLastName) as name'))->get();
