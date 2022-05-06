@@ -36,3 +36,7 @@ Route::get('/bookAdd', [BookController::class,'bookAdd']);
 Route::get('/appreciationAdd', function () {
     return view('appreciationAdd');
 });
+
+Route::post('/userAdd', [UserController::class,'userAdd']);
+
+Route::post('/userConnect', [UserController::class,'userConnect']);
