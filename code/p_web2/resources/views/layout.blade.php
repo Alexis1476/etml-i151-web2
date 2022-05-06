@@ -24,8 +24,12 @@
         </div>
         <div class="flex md:order-2">
             {{--TODO: Condition si user connecté--}}
-            <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
-            <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection">Sign Up</button>
+            @auth
+                <a href="/logout" class="btnConnection">Logout</a>
+            @else
+                <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
+                <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection">Sign Up</button>
+            @endauth
         </div>
     </div>
 </nav>
