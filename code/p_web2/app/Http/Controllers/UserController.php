@@ -29,7 +29,7 @@ class UserController extends Controller
 
         // Retourne page précedente avec les données écris dans le formulaire + erreurs
         return back()->withInput()->withErrors([
-            'userLogin' => 'your credentials are incorrect'
+            'userLogin' => 'Your credentials are incorrect'
         ]);
     }
 
