@@ -31,9 +31,7 @@ Route::get('/bookDetails{idBook}', [BookController::class, 'bookDetails']);
 
 Route::get('/test{idBook}', [BookController::class, 'calculAverage']);
 
-Route::get('/bookAdd', function () {
-    return view('bookAdd');
-});
+Route::get('/bookAdd', [BookController::class,'bookAdd']);
 
 Route::get('/appreciationAdd', function () {
     return view('appreciationAdd');

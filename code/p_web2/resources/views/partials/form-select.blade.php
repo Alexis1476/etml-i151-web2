@@ -6,9 +6,14 @@
         <select
             class="select"
             id="{{$nameItem}}">
+
             {{--TODO: Recevoir array de données et faire foreach pour affichage des options --}}
-            <option>Alexis</option>
-            <option>Robi</option>
+
+            @forelse($options as $option)
+                <option value="{{$option->id}}">{{$option->name}}</option>
+            @empty
+            @endforelse
+
         </select>
         <div class="pointer">
             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
