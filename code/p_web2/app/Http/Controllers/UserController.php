@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function userLogout()
+    {
+        auth()->logout();
+        return redirect('/');
+    }
+
     public function userConnect()
     {
         request()->validate([
