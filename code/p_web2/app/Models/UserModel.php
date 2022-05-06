@@ -14,12 +14,18 @@ class UserModel extends Model implements Authenticatable
     protected $table = 't_user';
     protected $primaryKey = 'idUser';
 
+    public function getAuthPassword()
+    {
+        return $this->usePassword;
+    }
+
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_user
      * Un utilisateur a plusieurs livre
      * @return
      */
-    public function books(){
+    public function books()
+    {
         return $this->hasMany(BookModel::class, 'idBook');
     }
 
@@ -28,7 +34,8 @@ class UserModel extends Model implements Authenticatable
      * Un livre a plusieurs appreciations
      * @return
      */
-    public function appreciations(){
+    public function appreciations()
+    {
         return $this->hasMany(AppreciateModel::class, 'idUser');
     }
 
@@ -43,6 +50,11 @@ class UserModel extends Model implements Authenticatable
         'useNbAppreciation',
         'useAdmin'
     ];
+
+    public function getRememberTokenName()
+    {
+        return '';
+    }
 
     use HasFactory;
 }
