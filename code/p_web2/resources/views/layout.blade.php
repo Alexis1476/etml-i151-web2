@@ -24,8 +24,12 @@
         </div>
         <div class="flex md:order-2">
             {{--TODO: Condition si user connecté--}}
-            <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
-            <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection">Sign Up</button>
+            @auth
+                <a href="/logout" class="btnConnection">Logout</a>
+            @else
+                <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
+                <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection">Sign Up</button>
+            @endauth
         </div>
     </div>
 </nav>
@@ -84,8 +88,7 @@
         </div>
     </div>
 </footer>
-</body>
-<script>
+<script type="text/javascript">
     function openModal(modalId) {
         let modal = document.getElementById(modalId);
         let buttonsClose = document.getElementsByClassName("closeBtn");
@@ -99,16 +102,15 @@
                 modal.classList.add('hidden');
             })
         }
-
-        // Si on click dehors du modal
-        window.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('flex');
-                modal.classList.add('hidden');
-            }
-        });
     }
+    // Si erreur coté serveur
+    @if($errors->has('userLogin')|| $errors->has('passwordLogin'))
+        openModal('modal-login');
+    @elseif($errors->has('user') || $errors->has('password'))
+        openModal('modal-register');
+    @endif
 </script>
+</body>
 </html>
 
 
