@@ -9,7 +9,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 <nav class="border-gray-200 px-2 sm:px-4 py-2.5">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
         <a href="" class="flex items-center">
@@ -51,7 +51,7 @@
         </div>
     </div>
 </div>
-<footer class="footer inset-x-0 bottom-0 relative pt-1 border-b-2 footer-color">
+<footer class="footer inset-x-0 bottom-0 p-4 pt-1 border-b-2 footer-color">
     <div class="container mx-auto px-6">
         <div class="sm:flex sm:mt-8">
             <div class="mt-8 sm:mt-0 sm:w-full sm:px-8 flex flex-col md:flex-row justify-around">
