@@ -7,10 +7,9 @@
             class="select {{ $errors->has($nameItem) ? 'border-red-500' : ''}}"
             id="{{$nameItem}}"
             name ="{{$nameItem}}">
-            {{--TODO: Recevoir array de données et faire foreach pour affichage des options --}}
             <option value="">-</option>
             @forelse($options as $option)
-                <option value="{{$option->id}}">{{$option->name}}</option>
+                <option {{old($nameItem)==$option->id ? 'selected' : ''}} value="{{$option->id}}">{{$option->name}}</option>
             @empty
             @endforelse
 
