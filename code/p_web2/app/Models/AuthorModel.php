@@ -24,6 +24,7 @@ class AuthorModel extends Model
         'autFirstName',
         'autLastName'
     ];
+    public $timestamps = false;
 
     use HasFactory;
 }
