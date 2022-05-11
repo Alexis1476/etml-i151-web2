@@ -8,6 +8,9 @@
         @if($nameItem != 'password')
             value="{{old($nameItem)}}"
         @endif
+        @if($nameItem=='publishingDate')
+            max="{{date('Y-m-d')}}"
+        @endif
     >
     @if($errors->has($nameItem))
         <p class="text-red-500 text-xs italic">{{$errors->first($nameItem)}}</p>

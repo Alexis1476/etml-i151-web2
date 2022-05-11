@@ -8,6 +8,7 @@ use App\Models\CategoryModel;
 use App\Models\EditorModel;
 use Illuminate\Http\Request;
 use App\Models\BookModel;
+use Illuminate\Validation\Rule;
 use PHPUnit\Framework\Constraint\Count;
 
 class BookController extends Controller
@@ -46,5 +47,36 @@ class BookController extends Controller
         $editors = EditorModel::select('idEditor as id', 'ediName as name')->get();
 
         return view('bookAdd', ['categories'=>$categories,'authors'=>$authors,'editors'=>$editors]);
+    }
+
+    public function bookCheckAdd()
+    {
+        //dd(request());
+        request()->validate([
+            'title' => ['required','regex:/[\w\s\'"&;:?!().-]|[a-zA-Z]+$/u','max:255','min:2'],
+            'numberPages' => ['required','numeric','min:10'],
+            'categories' => ['required'],
+            'authors' => ['required'],
+            'editors' => ['required'],
+            'publishingDate' => ['required'],
+            'bookPreview' => ['required','url'],
+            'resume' => ['required','min:50'],
+            'bookCover' => ['required','image']
+        ]);
+        $path = request('bookCover')->store('bookCovers', 'public');
+        BookModel::Create([
+            'idUser' =>auth()->user()->id,
+            'booTitle' => request('title'),
+            'booNbPages' => request('numberPages'),
+            'idCategory' => request('categories'),
+            'idAuthor' => request('authors'),
+            'idEditor' => request('editors'),
+            'booPublishingDate' => request('publishingDate'),
+            'booPreview' => request('bookPreview'),
+            'booResume' => request('resume'),
+            'booCoverName' => $path
+
+        ])
+        ;
     }
 }
