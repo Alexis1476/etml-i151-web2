@@ -9,6 +9,7 @@ class EditorModel extends Model
 {
     protected $table = 't_editor';
     protected $primaryKey = 'idEditor';
+    public $timestamps = false;
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_editor
      * @return
