@@ -65,7 +65,7 @@ class BookController extends Controller
         ]);
         $path = request('bookCover')->store('bookCovers', 'public');
         BookModel::Create([
-            'idUser' =>auth()->user()->id,
+            'idUser' =>auth()->user()->idUser,
             'booTitle' => request('title'),
             'booNbPages' => request('numberPages'),
             'idCategory' => request('categories'),
@@ -75,8 +75,7 @@ class BookController extends Controller
             'booPreview' => request('bookPreview'),
             'booResume' => request('resume'),
             'booCoverName' => $path
-
-        ])
-        ;
+        ]);
+        return redirect('/');
     }
 }
