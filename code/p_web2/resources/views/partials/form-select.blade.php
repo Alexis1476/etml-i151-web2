@@ -4,13 +4,12 @@
     </label>
     <div class="relative">
         <select
-            class="select"
-            id="{{$nameItem}}">
-
-            {{--TODO: Recevoir array de données et faire foreach pour affichage des options --}}
-
+            class="select {{ $errors->has($nameItem) ? 'border-red-500' : ''}}"
+            id="{{$nameItem}}"
+            name ="{{$nameItem}}">
+            <option value="">-</option>
             @forelse($options as $option)
-                <option value="{{$option->id}}">{{$option->name}}</option>
+                <option {{old($nameItem)==$option->id ? 'selected' : ''}} value="{{$option->id}}">{{$option->name}}</option>
             @empty
             @endforelse
 
@@ -21,4 +20,7 @@
             </svg>
         </div>
     </div>
+    @if($errors->has($nameItem))
+        <p class="text-red-500 text-xs italic">{{$errors->first($nameItem)}}</p>
+    @endif
 </div>

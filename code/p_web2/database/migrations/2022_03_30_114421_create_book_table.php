@@ -19,8 +19,8 @@ return new class extends Migration {
             $table->string('booPreview', 255);
             $table->text('booResume');
             $table->date('booPublishingDate');
-            $table->double('booNoteAverage');
-            $table->string('booCoverName', 50);
+            $table->double('booNoteAverage')->default(0);
+            $table->string('booCoverName', 255);
             $table->foreignId('idAuthor')->references('idAuthor')->on('t_author');
             $table->foreignId('idEditor')->references('idEditor')->on('t_editor');
             $table->foreignId('idCategory')->references('idCategory')->on('t_category');

@@ -39,5 +39,4 @@ Route::group([
     });
 });
 
-
-
+Route::post('/bookCheckAdd', [BookController::class,'bookCheckAdd']);
