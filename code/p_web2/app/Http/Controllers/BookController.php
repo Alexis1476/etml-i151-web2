@@ -53,21 +53,30 @@ class BookController extends Controller
     {
         //dd(request());
         request()->validate([
-            'title' => ['required','max:255'],
-            'numberPages' => ['required','max:255'],
+            'title' => ['required','regex:/[\w\s\'"&;:?!().-]|[a-zA-Z]+$/u','max:255','min:2'],
+            'numberPages' => ['required','numeric','min:10'],
             'categories' => ['required'],
             'authors' => ['required'],
             'editors' => ['required'],
             'publishingDate' => ['required'],
-            'bookPreview' => ['required'],
-            'resume' => ['required'],
-            'book cover' => ['required']
-
-        ], [
-            'authors.nullable' => 'No OK',
-            'title.max:255' => 'Title is to big'
-
+            'bookPreview' => ['required','url'],
+            'resume' => ['required','min:50'],
+            'bookCover' => ['required','image']
         ]);
+        $path = request('bookCover')->store('bookCovers', 'public');
+        BookModel::Create([
+            'idUser' =>auth()->user()->id,
+            'booTitle' => request('title'),
+            'booNbPages' => request('numberPages'),
+            'idCategory' => request('categories'),
+            'idAuthor' => request('authors'),
+            'idEditor' => request('editors'),
+            'booPublishingDate' => request('publishingDate'),
+            'booPreview' => request('bookPreview'),
+            'booResume' => request('resume'),
+            'booCoverName' => $path
 
+        ])
+        ;
     }
 }
