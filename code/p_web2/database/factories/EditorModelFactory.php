@@ -17,7 +17,7 @@ class EditorModelFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ediName' => $this->faker->company()
         ];
     }
 }
