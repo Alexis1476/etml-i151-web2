@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\UserModel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -10,19 +11,22 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
+    protected $model = UserModel::class;
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
+     * @throws \Exception
      */
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
+            'useNickname' => $this->faker->userName(),
+            'usePassword' => bcrypt('00000000'),
+            'useCreateAt' => now(),
+            'useNbBooks' => 0,
+            'useNbAppreciations' => 0,
+            'useAdmin' => $this->faker->randomNumber(2)
         ];
     }
 
