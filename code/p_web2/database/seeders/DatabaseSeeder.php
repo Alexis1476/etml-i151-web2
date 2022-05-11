@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         EditorModel::factory(10)->create();
         CategoryModel::factory(10)->create();
         BookModel::factory(10)->create();
+        //
     }
 }
