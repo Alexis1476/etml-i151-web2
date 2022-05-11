@@ -56,6 +56,8 @@ class UserController extends Controller
             'usePassword' => bcrypt(request('password')),
             'useAdmin' => '1' //TODO: Gérer droits
         ]);
+
+        return redirect('/');
     }
 
     public function userDetails()
