@@ -20,8 +20,8 @@
                 <h2 class="text-xl my-4">{{$book->editor->ediName}}</h2>
                 <h2 class="text-xl my-4">{{$book->booNoteAverage}}</h2>
             </section>
-            <section>
-                <img class="rounded-lg object-cover h-full" src="https://picsum.photos/200/300"
+            <section class="w-1/4">
+                <img class="rounded-lg object-cover h-full" src="{{asset("/storage/$book->booCoverName")}}"
                          alt="Book cover">
             </section>
         </div>
