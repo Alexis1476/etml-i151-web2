@@ -21,7 +21,7 @@ class BookModelFactory extends Factory
     public function definition()
     {
         return [
-            'booTitle' => $this->faker->sentence(4),
+            'booTitle' => ucfirst($this->faker->sentence(4)),
             'booNbPages'=>$this->faker->numberBetween(50,1500),
             'booPreview' => $this->faker->imageUrl(),
             'booResume' => $this->faker->text(),
