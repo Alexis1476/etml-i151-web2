@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,29 +18,25 @@ use App\Http\Controllers\HomeController;
 */
 Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/userAdd', function () {
-    return view('userAdd');
-});
-
-Route::get('/creatorDetails{idUser}', [UserController::class, 'userDetails']);
-
 Route::get('/bookList', [BookController::class, 'list']);
 
 Route::post('/bookList', [BookController::class, 'searchBooks']);
 
-Route::get('/bookDetails{idBook}', [BookController::class, 'bookDetails']);
+Route::post('/userAdd', [UserController::class, 'userAdd']);
 
-Route::get('/test{idBook}', [BookController::class, 'calculAverage']);
+Route::post('/userConnect', [UserController::class, 'userConnect']);
 
-Route::get('/bookAdd', [BookController::class,'bookAdd']);
-
-Route::get('/appreciationAdd', function () {
-    return view('appreciationAdd');
+Route::group([
+    'middleware' => 'App\http\Middleware\Auth'
+], function () {
+    Route::get('/logout', [UserController::class, 'userLogout']);
+    Route::get('/bookAdd', [BookController::class, 'bookAdd']);
+    Route::get('/bookDetails{idBook}', [BookController::class, 'bookDetails']);
+    Route::get('/creatorDetails{idUser}', [UserController::class, 'userDetails']);
+    // TODO
+    Route::get('/appreciationAdd', function () {
+        return view('appreciationAdd');
+    });
 });
+
 Route::post('/bookCheckAdd', [BookController::class,'bookCheckAdd']);
-
-Route::post('/userAdd', [UserController::class,'userAdd']);
-
-Route::post('/userConnect', [UserController::class,'userConnect']);
-
-Route::get('/logout', [UserController::class,'userLogout']);
