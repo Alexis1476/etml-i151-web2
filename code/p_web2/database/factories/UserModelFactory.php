@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserFactory extends Factory
+class UserModelFactory extends Factory
 {
     protected $model = UserModel::class;
     /**
@@ -21,12 +21,12 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'useNickname' => $this->faker->userName(),
+            'useNickname' => $this->faker->unique()->userName(),
             'usePassword' => bcrypt('00000000'),
             'useCreateAt' => now(),
             'useNbBooks' => 0,
-            'useNbAppreciations' => 0,
-            'useAdmin' => $this->faker->randomNumber(2)
+            'useNbAppreciation' => 0,
+            'useAdmin' => $this->faker->numberBetween(0,1)
         ];
     }
 
