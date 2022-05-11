@@ -17,7 +17,7 @@ class CategoryModelFactory extends Factory
     public function definition()
     {
         return [
-            'catName' => $this->faker->sentence(2)
+            'catName' => ucfirst($this->faker->word())
         ];
     }
 }
