@@ -16,7 +16,7 @@ class BookController extends Controller
 {
     //
     public function list(){
-        $books = BookModel::all();
+        $books = BookModel::orderByDesc('idBook')->get();
         $categories = CategoryModel::select('idCategory as id', 'catName as name')->get();
         return view('bookList', ['books'=>$books, 'categories'=>$categories]);
     }
