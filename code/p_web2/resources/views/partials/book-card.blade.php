@@ -5,10 +5,18 @@
                  src="{{asset("/storage/$img")}}" alt="">
         </div>
         <div class="p-8 w-64">
-            <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold hover:underline"><a
-                    href="/bookDetails{{$idBook}}">{{$title}}</a></div>
-            <p class="block mt-1 text-20 leading-tight font-medium text-black">{{$author}}</p>
-            <a href="/creatorDetails{{$idUser}}" class="hover:underline">{{$user}}</a>
+            @auth
+                <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold hover:underline"><a
+                        href="/bookDetails{{$idBook}}">{{$title}}</a></div>
+                <p class="block mt-1 text-20 leading-tight font-medium text-black">{{$author}}</p>
+                <a href="/creatorDetails{{$idUser}}" class="hover:underline">{{$user}}</a>
+            @else
+                <div class="uppercase tracking-wide text-xl text-blue-500 font-semibold">
+                    <p>{{$title}}</p>
+                </div>
+                <p class="block mt-1 text-20 leading-tight font-medium text-black">{{$author}}</p>
+                <p>{{$user}}</p>
+            @endauth
             <div class="flex items-center">
                 <svg class="w-7 h-7 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"
                      xmlns="http://www.w3.org/2000/svg">

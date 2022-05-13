@@ -6,9 +6,9 @@
         <div class="row-start-2">
             @include('partials.form-input', ['nameItem'=>'booName', 'text'=>'Search book', 'type'=>'text'])
         </div>
-        <div class="row-start-2">
+        {{--<div class="row-start-2">
             @include('partials.form-select', ['nameItem'=>'categories', 'options'=>$categories, 'text'=>'Filter by'])
-        </div>
+        </div>--}}
         <div class="row-start-2 items-center mt-7">
             <button
                 class="btnDefault"
@@ -16,11 +16,13 @@
                 Search
             </button>
         </div>
-        <div class="row-start-1 row-end-3 justify-self-end">
-            <a href="/bookAdd"
-               class="btnDefault">
-                Add book </a>
-        </div>
+        @auth
+            <div class="row-start-1 row-end-3 justify-self-end">
+                <a href="/bookAdd"
+                   class="btnDefault">
+                    Add book </a>
+            </div>
+        @endauth
     </form>
     <div class="flexCardDiv">
         @foreach($books as $book)

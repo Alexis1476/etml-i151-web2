@@ -35,21 +35,23 @@
 </nav>
 <div class="container mt-10 m-auto">
     @yield('content')
-    {{--TODO: Condition si user connecté--}}
-    <div id="modal-login" class="z-10 hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
-        <div class="relative max-w-sm py-2 px-3 rounded">
+    @guest
+        <div id="modal-login" class="z-10 hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
+            <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
-            @include('partials.form-login')
+                @include('partials.form-login')
+            </div>
         </div>
-    </div>
-    <div id="modal-register" class="z-10 hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
-        <div class="relative max-w-sm py-2 px-3 rounded">
+        <div id="modal-register"
+             class="z-10 hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
+            <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
-            @include('partials.form-register')
+                @include('partials.form-register')
+            </div>
         </div>
-    </div>
+    @endguest
 </div>
 <footer class="footer inset-x-0 bottom-0 p-4 pt-1 border-b-2 footer-color">
     <div class="container mx-auto px-6">
@@ -103,11 +105,12 @@
             })
         }
     }
+
     // Si erreur coté serveur
     @if($errors->has('userLogin')|| $errors->has('passwordLogin'))
-        openModal('modal-login');
+    openModal('modal-login');
     @elseif($errors->has('user') || $errors->has('password'))
-        openModal('modal-register');
+    openModal('modal-register');
     @endif
 </script>
 </body>
