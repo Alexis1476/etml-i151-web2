@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppreciateController;
 use App\Models\BookModel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
@@ -32,11 +33,11 @@ Route::group([
     Route::get('/logout', [UserController::class, 'userLogout']);
     Route::get('/bookAdd', [BookController::class, 'bookAdd']);
     Route::get('/bookDetails{idBook}', [BookController::class, 'bookDetails']);
+    Route::post('/bookDetails{idBook}', [AppreciateController::class, 'addAppreciation']);
     Route::get('/creatorDetails{idUser}', [UserController::class, 'userDetails']);
+    Route::post('/calculAverage', [BookController::class, 'calculAverage']);
     // TODO
-    Route::get('/appreciationAdd', function () {
-        return view('appreciationAdd');
-    });
+
 });
 
 Route::post('/bookCheckAdd', [BookController::class,'bookCheckAdd']);

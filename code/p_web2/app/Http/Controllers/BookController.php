@@ -6,6 +6,7 @@ use App\Models\AppreciateModel;
 use App\Models\AuthorModel;
 use App\Models\CategoryModel;
 use App\Models\EditorModel;
+use App\Models\UserModel;
 use Illuminate\Http\Request;
 use App\Models\BookModel;
 use Illuminate\Validation\Rule;
@@ -64,7 +65,7 @@ class BookController extends Controller
             'bookCover' => ['required','image']
         ]);
         $path = request('bookCover')->store('bookCovers', 'public');
-        BookModel::Create([
+        BookModel::create([
             'idUser' =>auth()->user()->idUser,
             'booTitle' => request('title'),
             'booNbPages' => request('numberPages'),
@@ -76,6 +77,8 @@ class BookController extends Controller
             'booResume' => request('resume'),
             'booCoverName' => $path
         ]);
+
+        UserModel::where('idUser', auth()->user()->idUser)->increment('useNbBooks');
         return redirect('/');
     }
 }
