@@ -22,9 +22,11 @@
                 <li>@include('partials.navbar-item', ['lien' => 'bookList', 'texte' => 'Book List'])</li>
             </ul>
         </div>
-        <div class="flex md:order-2">
+        <div class="flex md:order-2 items-center">
             {{--TODO: Condition si user connecté--}}
             @auth
+                <a href="/creatorDetails{{auth()->user()->idUser}}"
+                   class="hover:underline text-white mr-3">{{auth()->user()->useNickname}}</a>
                 <a href="/logout" class="btnConnection">Logout</a>
             @else
                 <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
