@@ -1,4 +1,12 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Page pour les détails d'un créateur
+-->
+
 @extends('layout')
+
+<!-- Section content -->
 @section('content')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <div class="md:flex no-wrap md:-mx-2 ">
@@ -8,9 +16,11 @@
             <div class="bg-white p-3 border-t-4 border-blue-500">
                 <div class="image overflow-hidden">
                     <img class="h-auto w-full mx-auto"
-                         src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
+                         src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
                          alt="">
                 </div>
+
+                <!-- Ajout du nom de l'utilisateur -->
                 <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{$user->useNickname}}</h1>
                 <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
                 <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
@@ -23,6 +33,8 @@
                         <span class="ml-auto"><span
                                 class="bg-blue-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
                     </li>
+
+                    <!-- Ajout de la date de création du compte de l'utilisateur -->
                     <li class="flex items-center py-3 font-bold">
                         <span>Member since</span>
                         <span class="ml-auto text-sm font-medium">{{$user->useCreateAt}}</span>
@@ -48,18 +60,26 @@
                 </div>
                 <div class="text-gray-700">
                     <div class="grid md:grid-cols-2 text-sm">
+
+                        <!-- Ajout du nom de l'utilisateur -->
                         <div class="grid grid-cols-2">
                             <div class="px-4 py-2 font-semibold">Name</div>
                             <div class="px-4 py-2">{{$user->useNickname}}</div>
                         </div>
+
+                        <!-- Ajout du nombre de livre ajouté par l'utilisateur -->
                         <div class="grid grid-cols-2">
                             <div class="px-4 py-2 font-semibold">Number of Books</div>
                             <div class="px-4 py-2">{{$user->useNbBooks}} Books</div>
                         </div>
+
+                        <!-- Ajout du nombre d'appréciation faire par l'utilisateur -->
                         <div class="grid grid-cols-2">
                             <div class="px-4 py-2 font-semibold">Number of Notes</div>
                             <div class="px-4 py-2">{{$user->useNbAppreciation}} Notes</div>
                         </div>
+
+                        <!-- Ajout du rôle de l'utilisateur -->
                         <div class="grid grid-cols-2">
                             <div class="px-4 py-2 font-semibold">Role</div>
                             <div class="px-4 py-2">{{$user->useAdmin}}</div>
@@ -87,6 +107,7 @@
                             <span class="tracking-wide">Top Posted Books</span>
                         </div>
                         <ul class="list-inside space-y-2">
+                            <!-- Récupération des livres que l'utilisateur a ajouté -->
                             @foreach($books as $book)
                                 <li>
                                     <a href="/bookDetails{{$book->idBook}}" class="text-gray-500 font-semibold text-lg hover:text-blue-500">{{$book->booTitle}}</a>

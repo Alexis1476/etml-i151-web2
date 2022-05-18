@@ -1,4 +1,10 @@
 <?php
+/**
+ * ETML
+ * Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+ * Date: 18.05.2022
+ * Description: Model pour la table t_book
+ */
 
 namespace App\Models;
 
