@@ -1,0 +1,57 @@
+/**
+ * ETML
+ * Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+ * Date: 18.05.2022
+ * Description: Feuille de style pour le site web
+ */
+
+body{
+    background-color: rgb(240, 240, 240);
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1920px;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+button {
+    margin-left: 0.5rem;
+}
+
+a {
+    font-size: 20px;
+}
+
+nav {
+    background-color: #3D8FDB;
+}
+
+.footer-color {
+    font-size: 18px;
+    color: #3D8FDB;
+    border-color: #3D8FDB;
+}
+
+#modal-login, #modal-register {
+    animation-name: openModal;
+    animation-duration: 1s;
+}
+
+@keyframes openModal {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text-20{
+    font-size: 1.25rem;
+}
+
