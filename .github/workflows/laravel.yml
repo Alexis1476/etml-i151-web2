@@ -21,7 +21,7 @@ jobs:
       - name: Change directory
         run: cd ./code/p_web2
       - name: Install Composer Dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer install
       - name: Generate Application Key
         run: php artisan key:generate
       - name: Upgrade Chrome Driver
