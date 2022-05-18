@@ -1,3 +1,9 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Page pour la liste des livres du sites
+-->
+
 @extends('layout')
 @section('content')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -16,13 +22,6 @@
                 Search
             </button>
         </div>
-        @auth
-            <div class="row-start-1 row-end-3 justify-self-end">
-                <a href="/bookAdd"
-                   class="btnDefault">
-                    Add book </a>
-            </div>
-        @endauth
     </form>
     <div class="flexCardDiv">
         @foreach($books as $book)

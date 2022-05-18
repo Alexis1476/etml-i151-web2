@@ -1,3 +1,9 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Page d'accueil du site
+-->
+
 @extends('layout')
 @section('content')
 

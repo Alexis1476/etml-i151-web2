@@ -1,3 +1,9 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Page pour les détails d'un livre
+-->
+
 @extends('layout')
 @section('content')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">

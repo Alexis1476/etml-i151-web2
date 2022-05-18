@@ -1,4 +1,10 @@
 <?php
+/**
+ * ETML
+ * Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+ * Date: 18.05.2022
+ * Description: Migrations pour la table t_editor
+ */
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

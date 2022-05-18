@@ -1,4 +1,10 @@
 <?php
+/**
+ * ETML
+ * Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+ * Date: 18.05.2022
+ * Description: Routes du site web
+ */
 
 use App\Http\Controllers\AppreciateController;
 use App\Models\BookModel;

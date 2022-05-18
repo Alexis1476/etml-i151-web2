@@ -1,4 +1,10 @@
 <?php
+/**
+ * ETML
+ * Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+ * Date: 18.05.2022
+ * Description: Controller pour l'utilisateur
+ */
 
 namespace App\Http\Controllers;
 

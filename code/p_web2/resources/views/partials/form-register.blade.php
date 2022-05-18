@@ -1,3 +1,9 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Partial pour le formulaire d'enregistrement
+-->
+
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <div class="flex items-center justify-center content-center h-full">
     <form action="/userAdd" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

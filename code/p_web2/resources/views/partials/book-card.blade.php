@@ -1,3 +1,9 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Partial pour le style des cartes de livre
+-->
+
 <div class="max-w-md mx-auto mb-10 bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
     <div class="md:flex md:h-full">
         <div class="md:shrink-0 h-full">

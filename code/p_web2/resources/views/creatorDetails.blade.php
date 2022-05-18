@@ -1,3 +1,9 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Page pour les détails d'un créateur
+-->
+
 @extends('layout')
 @section('content')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -8,7 +14,7 @@
             <div class="bg-white p-3 border-t-4 border-blue-500">
                 <div class="image overflow-hidden">
                     <img class="h-auto w-full mx-auto"
-                         src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
+                         src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
                          alt="">
                 </div>
                 <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{$user->useNickname}}</h1>

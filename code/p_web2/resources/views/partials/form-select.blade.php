@@ -1,3 +1,9 @@
+<!--
+Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+Date: 18.05.2022
+Description: Partial pour les listes déroulantes
+-->
+
 <div class="mb-4">
     <label class="label" for="{{$nameItem}}">
         {{$text}}
