@@ -61,9 +61,9 @@ class BookController extends Controller
             'publishingDate' => ['required'],
             'bookPreview' => ['required','url'],
             'resume' => ['required','min:50'],
-            'bookCover' => ['required','image']
+            'bookCovers' => ['required','image']
         ]);
-        $path = request('bookCover')->store('bookCovers', 'public');
+        $path = request('bookCovers')->store('bookCovers', 'public');
         BookModel::Create([
             'idUser' =>auth()->user()->idUser,
             'booTitle' => request('title'),

@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 */
 Route::get('/', [HomeController::class, 'home']);
 
-Route::get('/bookList', [BookController::class, 'list']);
+Route::get('/bookList', [BookController::class, 'list'])->name('bookList');
 
 Route::post('/bookList', [BookController::class, 'searchBooks']);
 

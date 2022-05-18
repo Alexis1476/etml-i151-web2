@@ -32,13 +32,13 @@
             <div class="mb-4">
                 <label class="label">Book cover</label>
                 <input
-                    class="input  {{ $errors->has("bookCover") ? 'border-red-500' : ''}}"
+                    class="input  {{ $errors->has("bookCovers") ? 'border-red-500' : ''}}"
                     name="bookCover"
                     type="file"
                     accept="image/png, image/jpeg, image/jpg, image/PNG">
 
-                @if($errors->has("bookCover"))
-                    <p class="text-red-500 text-xs italic">{{$errors->first("bookCover")}}</p>
+                @if($errors->has("bookCovers"))
+                    <p class="text-red-500 text-xs italic">{{$errors->first("bookCovers")}}</p>
                 @endif
             </div>
             <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">
