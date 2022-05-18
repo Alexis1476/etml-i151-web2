@@ -11,15 +11,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class AppreciateModel
+ */
 class AppreciateModel extends Model
 {
+    /**
+     * Nom de la table
+     * @var string
+     */
     protected $table = 't_appreciate';
-    //protected $primaryKey = ['idUser', 'idBook'];
+    /**
+     * Nom des clés primaires
+     * @var string[]
+     */
+    protected $primaryKey = ['idUser', 'idBook'];
+    /**
+     * @var bool
+     */
     public $timestamps = false;
+
     /**
      * Fonction qui créer la relation entre la table t_appreciate et la table t_user
      * Une appréciation appartient à un utilisateur
-     * @return
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(){
         return $this->belongsTo(UserModel::class, 'idUser','idUser');
@@ -28,13 +43,16 @@ class AppreciateModel extends Model
     /**
      * Fonction qui créer la relation entre la table t_appreciate et la table t_book
      * Une appréciation appartient à un livre
-     * @return
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function book(){
         return $this->belongsTo(BookModel::class, 'idBook');
     }
 
-    // Tableau pour les colonnes de la table qui sont remplissables
+    /**
+     * Nom des champs dans la table t_appreciate
+     * @var string[]
+     */
     protected $fillable = [
         'idBook',
         'idUser',

@@ -11,14 +11,30 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class BookModel
+ */
 class BookModel extends Model
 {
+    /**
+     * Nom de la table
+     * @var string
+     */
     protected $table = 't_book';
+    /**
+     * Nom de la clé primaire
+     * @var string
+     */
     protected $primaryKey = 'idBook';
+    /**
+     * @var bool
+     */
+    public $timestamps = false;
+
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_user
      * Le livre appartient à un utilisateur
-     * @return
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user(){
         return $this->belongsTo(UserModel::class, 'idUser');
@@ -27,7 +43,7 @@ class BookModel extends Model
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_category
      * Le livre appartient à une catégorie
-     * @return
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category(){
         return $this->belongsTo(CategoryModel::class, 'idCategory');
@@ -36,7 +52,7 @@ class BookModel extends Model
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_editor
      * Le livre appartient à un editeur
-     * @return
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function editor(){
         return $this->belongsTo(EditorModel::class, 'idEditor');
@@ -45,7 +61,7 @@ class BookModel extends Model
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_author
      * Le livre appartient à un auteur
-     * @return
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function author(){
         return $this->belongsTo(AuthorModel::class, 'idAuthor');
@@ -54,14 +70,17 @@ class BookModel extends Model
     /**
      * Fonction qui créer la relation entre la table t_book et la table t_appreciate
      * Le livre possède plusieurs appréciations
-     * @return
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function appreciations(){
         return $this->hasMany(AppreciateModel::class, 'idBook');
     }
 
-    // Tableau pour les colonnes de la table qui sont remplissables
-    public $timestamps = false;
+
+    /**
+     * Nom des champs dans la table t_book
+     * @var string[]
+     */
     protected $fillable = [
         'idBook',
         'booTitle',
