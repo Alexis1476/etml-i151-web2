@@ -34,6 +34,9 @@ jobs:
     - name: Run Laravel Server
       working-directory: ./code/p_web2
       run: php artisan serve --no-reload &
+    - name: Run migrations
+      working-directory: ./code/p_web2
+      run: php artisan migrate
     - name: Run Dusk Tests
       working-directory: ./code/p_web2
       env:
