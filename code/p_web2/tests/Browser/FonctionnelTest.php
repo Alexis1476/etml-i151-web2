@@ -20,7 +20,7 @@ class FonctionnelTest extends DuskTestCase
            $browser->visit('/')->assertSee('Book');
         });
     }
-    public function testRegister()
+    /*public function testRegister()
     {
         $this->browse(function ($browser) {
             $browser->visitRoute('bookList')
@@ -61,5 +61,5 @@ class FonctionnelTest extends DuskTestCase
                 ->press('Add book')
                 ->assertSee('Site description');
         });
-    }
+    }*/
 }
