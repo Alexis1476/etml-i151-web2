@@ -14,14 +14,25 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * Class UserController
+ */
 class UserController extends Controller
 {
+    /**
+     * Logout l'utilisateur
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function userLogout()
     {
         auth()->logout();
         return redirect('/');
     }
 
+    /**
+     * Validation de la connexion d'un utilisateur
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function userConnect()
     {
         request()->validate([
@@ -46,7 +57,10 @@ class UserController extends Controller
         ]);
     }
 
-    //
+    /**
+     * Validation des données d'ajout d'un utilisateur + ajoute l'utilisateur dans la base de données
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function userAdd()
     {
         request()->validate([
@@ -66,11 +80,16 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    /**
+     * Affiche les informations d'un utilisateur
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function userDetails()
     {
         $user = UserModel::where('idUser', request('idUser'))->first();
         $books = BookModel::where('idUser', request('idUser'))->get();
 
+        // Condition pour l'affichage de son rôle
         if($user->useAdmin == 1){
             $user->useAdmin = 'Admin';
         }
