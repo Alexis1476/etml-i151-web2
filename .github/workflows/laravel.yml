@@ -22,14 +22,19 @@ jobs:
         working-directory: ./code/p_web2
         run: composer install --no-progress --prefer-dist --optimize-autoloader
       - name: Generate Application Key
+        working-directory: ./code/p_web2
         run: php artisan key:generate
       - name: Upgrade Chrome Driver
+        working-directory: ./code/p_web2
         run: php artisan dusk:chrome-driver `/opt/google/chrome/chrome --version | cut -d " " -f3 | cut -d "." -f1`
       - name: Start Chrome Driver
+        working-directory: ./code/p_web2
         run: ./vendor/laravel/dusk/bin/chromedriver-linux &
       - name: Run Laravel Server
+        working-directory: ./code/p_web2
         run: php artisan serve --no-reload &
       - name: Run Dusk Tests
+        working-directory: ./code/p_web2
         env:
           APP_URL: "http://127.0.0.1:8000"
         run: php artisan dusk
