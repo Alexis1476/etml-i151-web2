@@ -10,7 +10,7 @@ Description: Partial pour les listes déroulantes
     </label>
     <div class="relative">
         <select
-            class="select {{ /*Gestion des erreurs*/ $errors->has($nameItem) ? 'border-red-500' : ''}}"
+            class="select {{ $errors->has($nameItem) ? 'border-red-500' : ''}}"
             id="{{$nameItem}}"
             name ="{{$nameItem}}">
             <option value="">-</option>

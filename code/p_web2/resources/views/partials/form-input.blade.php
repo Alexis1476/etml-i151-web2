@@ -12,11 +12,11 @@ Description: Partial pour le style des inputs
     <input
         class="input {{ $errors->has($nameItem) ? 'border-red-500' : ''}}"
         id="{{$nameItem}}" type="{{$type}}" placeholder="{{$text}}" name="{{$nameItem}}"
-        {{/*Si c'est un mdp il n'affiache pas les caractères insérer*/}}
+        {{--Si c'est un mdp il n'affiache pas les caractères insérer--}}
         @if($nameItem != 'password')
             value="{{old($nameItem)}}"
         @endif
-        {{/*Si c'est une date il met un maximum à ne pas dépacer*/}}
+        {{--Si c'est une date il met un maximum à ne pas dépacer--}}
         @if($nameItem=='publishingDate')
             max="{{date('Y-m-d')}}"
         @endif

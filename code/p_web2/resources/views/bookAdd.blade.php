@@ -27,7 +27,7 @@ Description: Page pour l'ajout d'un livre
                 </label>
 
                 <textarea
-                    class="textarea {{/* Gestion des erreurs */ $errors->has("resume") ? 'border-red-500' : ''}}"
+                    class="textarea {{$errors->has("resume") ? 'border-red-500' : ''}}"
                     id="resume"
                     rows="3"
                     placeholder="Resume of the book"
@@ -42,7 +42,7 @@ Description: Page pour l'ajout d'un livre
             <div class="mb-4">
                 <label class="label">Book cover</label>
                 <input
-                    class="input  {{/* Gestion des erreurs */ $errors->has("bookCovers") ? 'border-red-500' : ''}}"
+                    class="input  {{$errors->has("bookCovers") ? 'border-red-500' : ''}}"
                     name="bookCover"
                     type="file"
                     accept="image/png, image/jpeg, image/jpg, image/PNG">
