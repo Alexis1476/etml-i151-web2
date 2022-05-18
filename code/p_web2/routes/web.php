@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,17 +34,13 @@ Route::post('/userAdd', [UserController::class, 'userAdd']);
 
 Route::post('/userConnect', [UserController::class, 'userConnect']);
 
-Route::group([
-    'middleware' => 'App\http\Middleware\Auth'
-], function () {
+Route::middleware([Auth::class])->group(function () {
     Route::get('/logout', [UserController::class, 'userLogout']);
     Route::get('/bookAdd', [BookController::class, 'bookAdd']);
     Route::get('/bookDetails{idBook}', [BookController::class, 'bookDetails']);
     Route::post('/bookDetails{idBook}', [AppreciateController::class, 'addAppreciation']);
     Route::get('/creatorDetails{idUser}', [UserController::class, 'userDetails']);
     Route::post('/calculAverage', [BookController::class, 'calculAverage']);
-    // TODO
-
 });
 
-Route::post('/bookCheckAdd', [BookController::class,'bookCheckAdd']);
+Route::post('/bookCheckAdd', [BookController::class, 'bookCheckAdd']);
