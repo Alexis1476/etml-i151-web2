@@ -15,6 +15,11 @@ use Tests\DuskTestCase;
 
 class FonctionnelTest extends DuskTestCase
 {
+    public function testExample(){
+        $this->browse(function ($browser){
+           $browser->visit('/')->assertSee('Book');
+        });
+    }
     public function testRegister()
     {
         $this->browse(function ($browser) {
