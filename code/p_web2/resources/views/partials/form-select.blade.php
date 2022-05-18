@@ -10,10 +10,12 @@ Description: Partial pour les listes déroulantes
     </label>
     <div class="relative">
         <select
-            class="select {{ $errors->has($nameItem) ? 'border-red-500' : ''}}"
+            class="select {{ /*Gestion des erreurs*/ $errors->has($nameItem) ? 'border-red-500' : ''}}"
             id="{{$nameItem}}"
             name ="{{$nameItem}}">
             <option value="">-</option>
+            <!-- Ajout de toutes les données dans la liste déroulante et vérifie aussi
+            si il y a avait déja un valeur séléction lors d'un erreur -->
             @forelse($options as $option)
                 <option {{old($nameItem)==$option->id ? 'selected' : ''}} value="{{$option->id}}">{{$option->name}}</option>
             @empty
@@ -26,6 +28,7 @@ Description: Partial pour les listes déroulantes
             </svg>
         </div>
     </div>
+    <!-- Affichage de l'erreur -->
     @if($errors->has($nameItem))
         <p class="text-red-500 text-xs italic">{{$errors->first($nameItem)}}</p>
     @endif

@@ -11,11 +11,15 @@ Description: Partial pour le style des cartes de livre
                  src="{{asset("/storage/$img")}}" alt="">
         </div>
         <div class="p-8 w-64">
+            
+            <!-- Si il est connecté il a accès au lien-->
             @auth
                 <div class="uppercase tracking-wide text-sm text-blue-500 font-semibold hover:underline"><a
                         href="/bookDetails{{$idBook}}">{{$title}}</a></div>
                 <p class="block mt-1 text-20 leading-tight font-medium text-black">{{$author}}</p>
                 <a href="/creatorDetails{{$idUser}}" class="hover:underline">{{$user}}</a>
+
+            <!-- Sinon il n'a pas accès au lien-->
             @else
                 <div class="uppercase tracking-wide text-xl text-blue-500 font-semibold">
                     <p>{{$title}}</p>

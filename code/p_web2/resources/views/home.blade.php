@@ -5,6 +5,8 @@ Description: Page d'accueil du site
 -->
 
 @extends('layout')
+
+<!-- Section content -->
 @section('content')
 
     <h2 class="flex justify-center text-4xl mb-8 mt-4">Site description</h2>
@@ -13,7 +15,7 @@ Description: Page d'accueil du site
         books and see their average rating</p>
 
     <div class="flexCardDiv pt-10">
-        {{--ToDo faire une boucle foreach pour ajouter les livres--}}
+        <!-- Ajout chaque livres dans la page d'accueil -->
         @forelse($books as $book)
             @include('partials.book-card',[
                 'title'=>$book->booTitle,
@@ -24,8 +26,8 @@ Description: Page d'accueil du site
                 'idUser'=>$book->idUser,
                 'idBook'=>$book->idBook
             ])
+        <!-- Si il n'a aucune info il n'affiche rien -->
         @empty
-            {{--TODO: Info pas de valeurs--}}
         @endforelse
     </div>
 

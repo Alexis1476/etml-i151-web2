@@ -23,19 +23,23 @@
         </a>
         <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
             <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                <!-- Include les liens vers les autres pages -->
                 <li>@include('partials.navbar-item', ['lien' => '/', 'texte' => 'Home'])</li>
                 <li>@include('partials.navbar-item', ['lien' => 'bookList', 'texte' => 'Book List'])</li>
+
+                <!-- Include le lien vers la page d'ajout de livre si l'utilisateur est connecté-->
                 @auth
                     <li>@include('partials.navbar-item', ['lien' => 'bookAdd', 'texte' => 'Add Book'])</li>
                 @endauth
             </ul>
         </div>
         <div class="flex md:order-2 items-center">
-            {{--TODO: Condition si user connecté--}}
+            <!-- Vérification de si l'utilisateur est connecté pour pouvoir afficher son nom et le bouton Logout -->
             @auth
                 <a href="/creatorDetails{{auth()->user()->idUser}}"
                    class="hover:underline text-white mr-3">{{auth()->user()->useNickname}}</a>
                 <a href="/logout" class="btnConnection">Logout</a>
+            <!-- Sinon affiche les boutons pour la connexion ou la création de compte -->
             @else
                 <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
                 <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection">Sign Up</button>
@@ -44,12 +48,16 @@
     </div>
 </nav>
 <div class="container mt-10 m-auto">
+    <!-- Class content -->
     @yield('content')
+
+    <!-- Regarde si l'utilisateur est un invité -->
     @guest
         <div id="modal-login" class="z-10 hidden bg-black bg-opacity-50 fixed inset-0 flex justify-center items-center">
             <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
+                <!-- Include le formualaire pour la connexion -->
                 @include('partials.form-login')
             </div>
         </div>
@@ -58,6 +66,7 @@
             <div class="relative max-w-sm py-2 px-3 rounded">
             <span
                 class="closeBtn absolute top-1 right-5 text-3xl cursor-pointer hover:text-gray-500 focus:text-gray-500">&times;</span>
+                <!-- Include le formualaire pour la création de compte -->
                 @include('partials.form-register')
             </div>
         </div>
@@ -94,6 +103,8 @@
     </div>
 </footer>
 <script type="text/javascript">
+
+    // Ajout de la fonction openModal en JS
     function openModal(modalId) {
         let modal = document.getElementById(modalId);
         let buttonsClose = document.getElementsByClassName("closeBtn");
@@ -109,9 +120,11 @@
         }
     }
 
-    // Si erreur coté serveur
+    // Si erreur coté serveur reouvrir le modal
     @if($errors->has('userLogin')|| $errors->has('passwordLogin'))
     openModal('modal-login');
+
+    // Sinon c'est la même choses mais pour le modal register
     @elseif($errors->has('user') || $errors->has('password'))
     openModal('modal-register');
     @endif

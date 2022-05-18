@@ -9,6 +9,7 @@ Description: Partial pour le formulaire d'enregistrement
     <form action="/userAdd" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <h1 class="text-2xl font-bold text-center mb-5">Sign up</h1>
         @csrf
+        <!-- Include des inputs pour le formulaire de register  -->
         @include('partials.form-input', ['nameItem'=>'user', 'text'=>'Username', 'type'=>'text'])
         @include('partials.form-input', ['nameItem'=>'password', 'text'=>'Password', 'type'=>'password'])
         @include('partials.form-input', ['nameItem'=>'password_confirmation', 'text'=>'Confirm password', 'type'=>'password'])

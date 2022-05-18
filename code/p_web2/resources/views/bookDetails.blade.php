@@ -5,12 +5,13 @@ Description: Page pour les détails d'un livre
 -->
 
 @extends('layout')
+
+<!-- Section content -->
 @section('content')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <div class="block w-4/5 mt-5 mx-auto border-4 border-blue-500 rounded-3xl p-10">
         <div class="flex flex-row justify-between w-full h-full">
             <section class="text-blue-500">
-                {{--TODO : Remplacer par des variables--}}
                 <h1 class="text-2xl font-bold">Title :</h1>
                 <h2 class="text-xl my-4">Category :</h2>
                 <h2 class="text-xl my-4">Number of pages :</h2>
@@ -19,6 +20,8 @@ Description: Page pour les détails d'un livre
                 <h2 class="text-xl my-4">Average :</h2>
                 <h2 class="text-xl my-4">Note :</h2>
             </section>
+
+            <!-- Affichage de toutes les détails du livres -->
             <section>
                 <h1 class="text-2xl font-bold">{{$book->booTitle}}</h1>
                 <h2 class="text-xl my-4">{{$book->category->catName}}</h2>
@@ -34,6 +37,7 @@ Description: Page pour les détails d'un livre
                                 class="select {{ $errors->has("note") ? 'border-red-500' : ''}}"
                                 id="note"
                                 name="note">
+                                <!-- Ajout de la liste déroulante pour noté le livre -->
                                 @for($i = 2; $i < 11; $i++)
                                     <option value="{{$i/2}}">{{$i/2}}</option>
                                 @endfor
@@ -48,11 +52,14 @@ Description: Page pour les détails d'un livre
                     </div>
                     <button class="btnDefault ml-5" type="submit"> Appreciate</button>
                     </form>
+                    <!-- Si il ne choisit aucun note, il lui affiche comme quoi il n'a pas séléction de note -->
                     @if($errors->has("note"))
                         <p class="text-red-500 text-xs italic">{{$errors->first("note")}}</p>
                     @endif
                 </div>
             </section>
+
+            <!-- Affichage de l'image de couverture du livre -->
             <section class="w-1/4">
                 <img class="rounded-lg object-cover h-full" src="{{asset("/storage/$book->booCoverName")}}"
                      alt="Book cover">
