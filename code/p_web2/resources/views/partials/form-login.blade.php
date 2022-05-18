@@ -16,6 +16,7 @@ Description: Partial pour le formulaire de connexion
             <div class="flex items-center justify-between">
                 <button
                     class="btnDefault"
+                    name="loginSubmit"
                     type="submit">
                     Login
                 </button>
