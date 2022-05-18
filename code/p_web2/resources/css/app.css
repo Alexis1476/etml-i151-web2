@@ -1,0 +1,37 @@
+/**
+ * ETML
+ * Auteur: David Dieperink, Robustiano Lombardo, Alexis Rojas, Stefan Petrovic
+ * Date: 18.05.2022
+ * Description: Feuille de style css pour les composants tailwind
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .btnConnection {
+        @apply text-white border-2 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0;
+    }
+    .btnDefault {
+        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none;
+    }
+    .input {
+        @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
+    }
+    .label {
+        @apply block text-blue-500 text-sm font-bold mb-2;
+    }
+    .select {
+        @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
+    }
+    .pointer {
+        @apply pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700;
+    }
+    .textarea {
+        @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
+    }
+    .flexCardDiv {
+        @apply flex flex-wrap justify-center;
+    }
+}
