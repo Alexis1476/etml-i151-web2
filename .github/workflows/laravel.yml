@@ -44,7 +44,13 @@ jobs:
         APP_URL: "http://127.0.0.1:8000"
       run: php artisan migrate
     - name: Run Dusk Tests
-      working-directory: ./code/p_web2        
+      working-directory: ./code/p_web2
+      env:
+        DB_USER: root
+        DB_PASSWORD: root
+        DB_CONNECTION: mysql
+        DB_DATABASE: db_test
+        APP_URL: "http://127.0.0.1:8000"
       run: php artisan dusk
     - name: Upload Screenshots
       if: failure()
