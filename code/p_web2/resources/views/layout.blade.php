@@ -42,7 +42,7 @@
             <!-- Sinon affiche les boutons pour la connexion ou la création de compte -->
             @else
                 <button onclick="openModal('modal-login')" id="login-btn" class="btnConnection">Login</button>
-                <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection">Sign Up</button>
+                <button onclick="openModal('modal-register')" id="register-btn" class="btnConnection" name="btnRegister">Sign Up</button>
             @endauth
         </div>
     </div>

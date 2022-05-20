@@ -17,7 +17,8 @@ Description: Partial pour le formulaire d'enregistrement
             <div class="flex items-center justify-between">
                 <button
                     class="btnDefault"
-                    type="submit">
+                    type="submit"
+                    name="registerSubmit">
                     Sign up
                 </button>
             </div>
