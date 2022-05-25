@@ -37,14 +37,13 @@ class AppreciateController extends Controller
         // Sinon on créer l'appréciation
         else {
             AppreciateModel::create([
-                'idUser' => auth()->user()->idUser,
                 'idBook' => request('idBook'),
+                'idUser' => auth()->user()->idUser,
                 'appNote' => request('note')
             ]);
+            // Incrémentation du nombre d'appréciations d'un utilisateur
+            UserModel::where('idUser', auth()->user()->idUser)->increment('useNbAppreciation');
         }
-
-        // Incrémentation du nombre d'appréciations d'un utilisateur
-        UserModel::where('idUser', auth()->user()->idUser)->increment('useNbAppreciation');
 
         // Mise à jour de la moyene d'un livre
         $book = new BookController();

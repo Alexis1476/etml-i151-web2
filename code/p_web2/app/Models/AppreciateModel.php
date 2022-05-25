@@ -25,7 +25,7 @@ class AppreciateModel extends Model
      * Nom des clés primaires
      * @var string[]
      */
-    protected $primaryKey = ['idUser', 'idBook'];
+    /*protected $primaryKey = ['idUser', 'idBook'];*/
     /**
      * @var bool
      */
